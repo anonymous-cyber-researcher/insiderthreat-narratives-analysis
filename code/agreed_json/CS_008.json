@@ -1,0 +1,89 @@
+{
+  "stage1_ingestion": {
+    "case_id": "CS-008",
+    "source": "US Department of Justice",
+    "reference": "https://www.justice.gov/usao-sdny/pr/former-cia-officer-joshua-adam-schulte-sentenced-40-years-prison-espionage-and-child",
+    "case_summary": "An employee with privileged access to highly sensitive government systems abused that access to obtain classified information, conceal unauthorised activities, and disclose protected data outside authorised channels.",
+    "include_for_stage_2": true,
+    "screening_note": "he was an employee when it started but later former employee so selected employee and current; assuming software developer could be engineer. Attack step goal other - revenge, chaos. Organisational vulnerability other - lack of personnel psych screening?"
+  },
+  "catalyst": {
+    "precipitating_event": "disputes_with_employers;  "
+  },
+  "actor_characteristics": {
+    "identified_actors": [
+      {
+        "actor_id": "actor_1",
+        "type_of_actor": [
+          "employeee"
+        ],
+        "enterprise_role": [
+          "engineer"
+        ],
+        "state_of_relationship": [
+          "current"
+        ]
+      }
+    ],
+    "psychological_state": [
+      "grievances"
+    ],
+    "personality_characteristics": [
+      "unknown"
+    ],
+    "attitude_towards_work": [
+      "resentful"
+    ],
+    "motivation_to_attack": [
+      "revenge"
+    ],
+    "skill_set": [
+      "technical_expertise", 
+	  "privileged_system_knowledge",
+      "data_exploitation_capability"
+    ],
+    "opportunity": [
+      "privileged_access",
+      "shared_credentials",
+	  "weak_monitoring"
+    ],
+    "historical_behaviour": [
+      "company_policy_violation"
+    ],
+    "observed_physical_behaviour": [
+      "work_place_rule_violation"
+    ],
+    "observed_cyber_behaviour": [
+      "access_and_authentication",
+      "data_and_file_management",
+      "system_and_network_behaviour",
+      "privilege_and_security_behaviour"
+    ]
+  },
+  "attack_characteristics": {
+    "attack": "intentional",
+    "attack_objective": "espionage",
+    "attack_step": [
+	  "target_identification",
+	  "access/ access_acquisition",
+	  "privilege/ permission_abuse",
+	  "concealment/ evasion",
+	  "collection/ acquisition",
+	  "execution/ action",
+	  "data_transfer/ exfiltration",
+      "persistence/ continued_access"
+    ],
+    "attack_step_goal": [
+      "reputational_damage",
+      "operational_disruption"
+    ]
+  },
+  "organisation_characteristics": {
+    "asset": "information_asset",
+    "vulnerability": [
+      "inconsistent_security_policies",
+      "poor_management_practices",
+	  "poor_security_practices"
+    ]
+  }
+}

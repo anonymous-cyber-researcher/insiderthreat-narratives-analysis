@@ -1,0 +1,78 @@
+{
+  "stage1_ingestion": {
+    "case_id": "CS-018",
+    "source": "indictment",
+    "reference": "U.S. District Court for the Western District of Kentucky",
+    "case_summary": "Amanda S. Robertson, a bookkeeper, used her position to unlawfully obtain over $1,000,000 from her employer's account through unauthorized electronic payments and company checks for personal expenses.",
+    "include_for_stage_2": true,
+    "screening_note": "The case involves significant financial fraud by an employee with access to financial systems."
+  },
+  "catalyst": {
+    "precipitating_event": [
+      "other"
+    ]
+  },
+  "actor_characteristics": {
+    "actors": [
+      {
+        "actor_id": "actor_1",
+        "type_of_actor": "employee",
+        "enterprise_role": "finance_person",
+        "state_of_relationship": "current"
+      }
+    ],
+    "psychological_state": [
+      "unknown"
+    ],
+    "personality_characteristics": [
+      "unknown"
+    ],
+    "attitude_towards_work": [
+      "unknown"
+    ],
+    "motivation_to_attack": [
+      "financial_reward"
+    ],
+    "skill_set": [
+      "privileged_system_knowledge"
+    ],
+    "opportunity": [
+      "trusted_position",
+      "insufficient_monitoring"
+    ],
+    "historical_behaviour": [
+      "unknown"
+    ],
+    "observed_physical_behaviour": [
+      "unknown"
+    ],
+    "observed_cyber_behaviour": [
+      "access_and_authentication",
+      "data_and_file_management"
+    ]
+  },
+  "attack_characteristics": {
+    "attack": [
+      "intentional"
+    ],
+    "attack_objective": [
+      "fraud"
+    ],
+    "attack_step": [
+      "execution/action",
+      "data_transfer/exfiltration"
+    ],
+    "attack_step_goal": [
+      "financial_loss"
+    ]
+  },
+  "organisation_characteristics": {
+    "asset": [
+      "organisational_asset"
+    ],
+    "vulnerability": [
+      "poor_management_practices",
+      "insufficient_monitoring"
+    ]
+  }
+}

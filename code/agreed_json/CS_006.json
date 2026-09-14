@@ -1,0 +1,83 @@
+{
+ "stage1_ingestion": {
+    "case_id": "CS-006",
+    "source": "US Department of Justice",
+    "reference": "https://www.justice.gov/usao-ndca/pr/san-jose-man-sentenced-two-years-imprisonment-damaging-cisco-s-network",
+    "case_summary": "A former employee unlawfully accessed his previous employer’s systems and carried out actions that disrupted critical business operations and services. The incident resulted in significant operational and financial impacts on the organization, leading to criminal charges and a prison sentence.",
+    "include_for_stage_2": true,
+    "screening_note": "Included for Stage 2 because it is about a former trusted employee, unauthorised access to former employer cloud infrastructure, deployment of code that deleted virtual machines, disruption to organisational services, and significant operational and financial harm.  I coded catalyst as resignation because the source states he had resigned before the unauthorised access, her had no separate grievance or personal motive from what i can see. Psychological state, personality characteristics, attitude toward work, motivation, historical behaviour, physical behaviour, and organisational vulnerability are coded as unknown because there is insufficient evidence. Weak monitoring or poor offboarding are not coded as organisational vulnerabilities because the source does not explain how access remained possible."
+  },
+  "catalyst": {
+    "precipitating_event": "resignation"
+  },
+  "actor_characteristics": {
+    "identified_actors": [
+      {
+        "actor_id": "actor_1",
+        "type_of_actor": [
+          "former_employee"
+        ],
+        "enterprise_role": [
+          "support_person"
+        ],
+        "state_of_relationship": [
+          "former"
+        ]
+      }
+    ],
+    "psychological_state": [
+      "unknown"
+    ],
+    "personality_characteristics": [
+      "unknown"
+    ],
+    "attitude_towards_work": [
+      "unknown"
+    ],
+    "motivation_to_attack": [
+      "unknown"
+    ],
+    "skill_set": [
+		"technical_expertise",
+		"privileged_system_knowledge"
+    ],
+    "opportunity": [
+      "privileged_access",
+      "remote_access",
+      "trusted_position"
+    ],
+    "historical_behaviour": [
+      "unknown"
+    ],
+    "observed_physical_behaviour": [
+      "unknown"
+    ],
+    "observed_cyber_behaviour": [
+      "access_and_authentication",
+      "system_and_network_behaviour",
+      "privilege_and_security_behaviour",
+	  "data_and_file_management"
+    ]
+  },
+  "attack_characteristics": {
+    "attack": "intentional",
+    "attack_objective": "sabotage",
+    "attack_step": [
+      "access/access_acquisition",
+      "privilege/permission_abuse",
+      "execution/action",
+      "sabotage/disruption"
+    ],
+    "attack_step_goal": [
+      "availability_loss",
+	  "operational_disruption"
+      
+    ]
+  },
+  "organisation_characteristics": {
+    "asset": "technology_asset",
+    "vulnerability": [
+      "inconsistent_security_policies"
+    ]
+  }
+}

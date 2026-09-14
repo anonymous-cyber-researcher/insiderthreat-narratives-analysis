@@ -1,0 +1,94 @@
+{
+  "stage1_ingestion": {
+    "case_id": "CS-001",
+    "source": "court_document",
+    "reference": "case reference or citation",
+    "case_summary": "Three former DHS employees conspired to steal proprietary software and sensitive databases from the U.S. government for commercial use. They disclosed the stolen data to developers in India and attempted to obstruct the investigation.",
+    "include_for_stage_2": true,
+    "screening_note": "The case involves multiple actors with a clear intent to commit theft and fraud. The motive is financial gain through commercial software development."
+  },
+  "catalyst": {
+    "precipitating_event": [
+      "other"
+    ]
+  },
+  "actor_characteristics": {
+    "actors": [
+      {
+        "actor_id": "actor_1",
+        "type_of_actor": "former_employee",
+        "enterprise_role": "executive",
+        "state_of_relationship": "former"
+      },
+      {
+        "actor_id": "actor_2",
+        "type_of_actor": "former_employee",
+        "enterprise_role": "other",
+        "state_of_relationship": "former"
+      },
+      {
+        "actor_id": "actor_3",
+        "type_of_actor": "former_employee",
+        "enterprise_role": "other",
+        "state_of_relationship": "former"
+      }
+    ],
+    "psychological_state": [
+      "unknown"
+    ],
+    "personality_characteristics": [
+      "unknown"
+    ],
+    "attitude_towards_work": [
+      "unknown"
+    ],
+    "motivation_to_attack": [
+      "financial_reward"
+    ],
+    "skill_set": [
+      "technical_expertise",
+      "privileged_system_knowledge"
+    ],
+    "opportunity": [
+      "privileged_access",
+      "trusted_position"
+    ],
+    "historical_behaviour": [
+      "unknown"
+    ],
+    "observed_physical_behaviour": [
+      "unknown"
+    ],
+    "observed_cyber_behaviour": [
+      "data_and_file_management",
+      "communication_activities"
+    ]
+  },
+  "attack_characteristics": {
+    "attack": [
+      "intentional"
+    ],
+    "attack_objective": [
+      "data_theft",
+      "fraud"
+    ],
+    "attack_step": [
+      "information_gathering / Discovery",
+      "data_transfer/exfiltration",
+      "concealment/evasion"
+    ],
+    "attack_step_goal": [
+      "confidentiality_loss",
+      "financial_loss"
+    ]
+  },
+  "organisation_characteristics": {
+    "asset": [
+      "information_asset"
+    ],
+    "vulnerability": [
+      "poor_management_practices",
+      "insufficient_monitoring"
+    ]
+  }
+}

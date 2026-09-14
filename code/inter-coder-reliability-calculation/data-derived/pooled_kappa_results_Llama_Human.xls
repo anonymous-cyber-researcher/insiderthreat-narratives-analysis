@@ -1,0 +1,17 @@
+field,categories,n_decisions,human1_positive,human2_positive,percent_agreement,pooled_kappa,interpretation
+attack_characteristics.attack_step_goal,9.0,90.0,16.0,20.0,80.0,0.377,Fair
+attack_characteristics.attack_step,12.0,120.0,24.0,46.0,68.3,0.264,Fair
+actor_characteristics.psychological_state,3.0,30.0,10.0,10.0,66.7,0.25,Fair
+actor_characteristics.motivation_to_attack,4.0,40.0,11.0,11.0,95.0,0.875,Almost perfect
+organisation_characteristics.vulnerability,7.0,70.0,14.0,14.0,68.6,0.018,Slight
+actor_characteristics.attitude_towards_work,2.0,20.0,10.0,10.0,100.0,1.0,Almost perfect
+actor_characteristics.opportunity,10.0,100.0,21.0,28.0,77.0,0.382,Fair
+attack_characteristics.attack,1.0,10.0,10.0,10.0,100.0,,Not estimable
+actor_characteristics.skill_set,5.0,50.0,12.0,23.0,66.0,0.29,Fair
+organisation_characteristics.asset,4.0,40.0,11.0,14.0,67.5,0.249,Fair
+actor_characteristics.observed_cyber_behaviour,6.0,60.0,17.0,33.0,46.7,-0.022,Less than chance
+actor_characteristics.personality_characteristics,1.0,10.0,10.0,10.0,100.0,,Not estimable
+catalyst.precipitating_event,10.0,100.0,16.0,11.0,81.0,0.191,Slight
+actor_characteristics.observed_physical_behaviour,2.0,20.0,10.0,10.0,50.0,0.0,Slight
+actor_characteristics.historical_behaviour,2.0,20.0,10.0,10.0,90.0,0.8,Substantial
+attack_characteristics.attack_objective,6.0,60.0,12.0,10.0,86.7,0.556,Moderate

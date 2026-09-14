@@ -1,0 +1,78 @@
+{
+  "stage1_ingestion": {
+    "case_id": "CS-003",
+    "source": "media",
+    "reference": "federal court document",
+    "case_summary": "Darrell Pike embezzled over $1.2 million from his employer by submitting fraudulent invoices over a 16-year period.",
+    "include_for_stage_2": true,
+    "screening_note": "Financial reward is explicitly supported by the source."
+  },
+  "catalyst": {
+    "precipitating_event": [
+      "unknown"
+    ]
+  },
+  "actor_characteristics": {
+    "actors": [
+      {
+        "actor_id": "actor_1",
+        "type_of_actor": "employee",
+        "enterprise_role": "manager",
+        "state_of_relationship": "former"
+      }
+    ],
+    "psychological_state": [
+      "unknown"
+    ],
+    "personality_characteristics": [
+      "unknown"
+    ],
+    "attitude_towards_work": [
+      "unknown"
+    ],
+    "motivation_to_attack": [
+      "financial_reward"
+    ],
+    "skill_set": [
+      "deception/social_engineering_capability"
+    ],
+    "opportunity": [
+      "trusted_position",
+      "insufficient_monitoring"
+    ],
+    "historical_behaviour": [
+      "unknown"
+    ],
+    "observed_physical_behaviour": [
+      "unknown"
+    ],
+    "observed_cyber_behaviour": [
+      "unknown"
+    ]
+  },
+  "attack_characteristics": {
+    "attack": [
+      "intentional"
+    ],
+    "attack_objective": [
+      "fraud"
+    ],
+    "attack_step": [
+      "preparation/planning",
+      "information_gathering / Discovery",
+      "execution/action"
+    ],
+    "attack_step_goal": [
+      "financial_loss"
+    ]
+  },
+  "organisation_characteristics": {
+    "asset": [
+      "organisational_asset"
+    ],
+    "vulnerability": [
+      "poor_management_practices",
+      "lack_of_oversight"
+    ]
+  }
+}

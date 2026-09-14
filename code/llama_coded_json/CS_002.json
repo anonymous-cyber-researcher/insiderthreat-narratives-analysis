@@ -1,0 +1,78 @@
+{
+  "stage1_ingestion": {
+    "case_id": "CS-002",
+    "source": "news_article",
+    "reference": "case reference or citation",
+    "case_summary": "A United States Navy service member was sentenced to 27 months in federal prison for transmitting sensitive U.S. military information to an intelligence officer from the People's Republic of China.",
+    "include_for_stage_2": true,
+    "screening_note": "Motive coded as financial reward only because the timing and case narrative link the act to bribe payments."
+  },
+  "catalyst": {
+    "precipitating_event": [
+      "resignation",
+      "family_problems"
+    ]
+  },
+  "actor_characteristics": {
+    "actors": [
+      {
+        "actor_id": "1",
+        "type_of_actor": "employee",
+        "enterprise_role": "military_person",
+        "state_of_relationship": "current"
+      }
+    ],
+    "psychological_state": [
+      "financial_stress"
+    ],
+    "personality_characteristics": [
+      "unknown"
+    ],
+    "attitude_towards_work": [
+      "unknown"
+    ],
+    "motivation_to_attack": [
+      "financial_reward"
+    ],
+    "skill_set": [
+      "technical_expertise"
+    ],
+    "opportunity": [
+      "privileged_access",
+      "trusted_position"
+    ],
+    "historical_behaviour": [
+      "unknown"
+    ],
+    "observed_physical_behaviour": [
+      "unknown"
+    ],
+    "observed_cyber_behaviour": [
+      "access_and_authentication"
+    ]
+  },
+  "attack_characteristics": {
+    "attack": [
+      "intentional"
+    ],
+    "attack_objective": [
+      "data_theft"
+    ],
+    "attack_step": [
+      "access/access_acquisition",
+      "data_transfer/exfiltration"
+    ],
+    "attack_step_goal": [
+      "financial_loss",
+      "financial_loss"
+    ]
+  },
+  "organisation_characteristics": {
+    "asset": [
+      "organisational_asset"
+    ],
+    "vulnerability": [
+      "poor_management_practices"
+    ]
+  }
+}

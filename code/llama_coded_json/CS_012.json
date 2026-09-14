@@ -1,0 +1,99 @@
+{
+  "stage1_ingestion": {
+    "case_id": "CS-012",
+    "source": "news_article",
+    "reference": "https://www.justice.gov/opa/pr/chinese-company-sentenced-stealing-trade-secrets-american-superconductor-inc",
+    "case_summary": "A Chinese company, Sinovel Wind Group LLC, was sentenced for stealing trade secrets from AMSC, a U.S.-based company.",
+    "include_for_stage_2": true,
+    "screening_note": "The case involves a conspiracy to commit trade secret theft, theft of trade secrets, and wire fraud."
+  },
+  "catalyst": {
+    "precipitating_event": [
+      "resignation",
+      "unknown"
+    ]
+  },
+  "actor_characteristics": {
+    "actors": [
+      {
+        "actor_id": "Sinovel Wind Group LLC",
+        "type_of_actor": "business_partner",
+        "enterprise_role": "executive",
+        "state_of_relationship": "former"
+      },
+      {
+        "actor_id": "Su Liying",
+        "type_of_actor": "employee",
+        "enterprise_role": "executive",
+        "state_of_relationship": "current"
+      },
+      {
+        "actor_id": "Zhao Haichun",
+        "type_of_actor": "employee",
+        "enterprise_role": "executive",
+        "state_of_relationship": "current"
+      },
+      {
+        "actor_id": "Dejan Karabasevic",
+        "type_of_actor": "former_employee",
+        "enterprise_role": "engineer",
+        "state_of_relationship": "former"
+      }
+    ],
+    "psychological_state": [
+      "unknown"
+    ],
+    "personality_characteristics": [
+      "unknown"
+    ],
+    "attitude_towards_work": [
+      "unknown"
+    ],
+    "motivation_to_attack": [
+      "financial_reward"
+    ],
+    "skill_set": [
+      "technical_expertise"
+    ],
+    "opportunity": [
+      "privileged_access",
+      "remote_access"
+    ],
+    "historical_behaviour": [
+      "unknown"
+    ],
+    "observed_physical_behaviour": [
+      "unknown"
+    ],
+    "observed_cyber_behaviour": [
+      "access_and_authentication",
+      "data_and_file_management"
+    ]
+  },
+  "attack_characteristics": {
+    "attack": [
+      "intentional"
+    ],
+    "attack_objective": [
+      "data_theft"
+    ],
+    "attack_step": [
+      "access/access_acquisition",
+      "data_transfer/exfiltration"
+    ],
+    "attack_step_goal": [
+      "confidentiality_loss",
+      "integrity_loss"
+    ]
+  },
+  "organisation_characteristics": {
+    "asset": [
+      "intangible_asset",
+      "technology_asset"
+    ],
+    "vulnerability": [
+      "poor_management_practices",
+      "inconsistent_security_policies"
+    ]
+  }
+}

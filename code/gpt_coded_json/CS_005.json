@@ -1,0 +1,81 @@
+{
+  "stage1_ingestion": {
+    "case_id": "CS-005",
+    "source": "court_document",
+    "reference": "United States District Court, District of Hawaii",
+    "case_summary": "Casey K. Umetsu, a former IT professional, sabotaged his previous employer's network by misdirecting web and email traffic, aiming to be rehired at a higher salary.",
+    "include_for_stage_2": true,
+    "screening_note": "The case involves intentional sabotage for personal gain, supported by court documents."
+  },
+  "catalyst": {
+    "precipitating_event": [
+      "resignation"
+    ]
+  },
+  "actor_characteristics": {
+    "actors": [
+      {
+        "actor_id": "actor_1",
+        "type_of_actor": "former_employee",
+        "enterprise_role": "support_person",
+        "state_of_relationship": "former"
+      }
+    ],
+    "psychological_state": [
+      "job_dissatisfaction"
+    ],
+    "personality_characteristics": [
+      "selfishness"
+    ],
+    "attitude_towards_work": [
+      "resentful"
+    ],
+    "motivation_to_attack": [
+      "personal_gain"
+    ],
+    "skill_set": [
+      "technical_expertise",
+      "privileged_system_knowledge"
+    ],
+    "opportunity": [
+      "privileged_access",
+      "no_access_revocation"
+    ],
+    "historical_behaviour": [
+      "unknown"
+    ],
+    "observed_physical_behaviour": [
+      "unknown"
+    ],
+    "observed_cyber_behaviour": [
+      "access_and_authentication",
+      "system_and_network_behaviour"
+    ]
+  },
+  "attack_characteristics": {
+    "attack": [
+      "intentional"
+    ],
+    "attack_objective": [
+      "sabotage"
+    ],
+    "attack_step": [
+      "access/access_acquisition",
+      "manipulation/modification",
+      "concealment/evasion"
+    ],
+    "attack_step_goal": [
+      "availability_loss",
+      "reputational_damage"
+    ]
+  },
+  "organisation_characteristics": {
+    "asset": [
+      "technology_asset"
+    ],
+    "vulnerability": [
+      "poor_management_practices",
+      "lack_of_oversight"
+    ]
+  }
+}

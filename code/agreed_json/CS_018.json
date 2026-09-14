@@ -1,0 +1,75 @@
+{
+  "stage1_ingestion": {
+    "case_id": "CS-018",
+    "source": "US Department of Justice",
+    "reference": "https://www.justice.gov/usao-wdky/pr/federal-grand-jury-indicts-marshall-county-woman-wire-fraud",
+    "case_summary": "An employee abused a trusted financial role to gain unauthorised access to company financial resources and diverted organisational funds for personal benefit over an extended period.",
+    "include_for_stage_2": true,
+    "screening_note": "a trusted financial employee, alleged intentional wire fraud, access to employer bank accounts, unauthorized electronic payments and company checks, affected organisational funds/services, and a personal financial benefit.  Catalyst is coded as unknown because the source does not identify a specific trigger, grievance, pressure event, or opportunity-discovery event. Psychological state, personality characteristics, attitude toward work, historical behaviour, and organisational vulnerability are coded as unknown as insufficient evidence."
+  },
+  "catalyst": {
+    "precipitating_event": "unknown"
+  },
+  "actor_characteristics": {
+    "identified_actors": [
+      {
+        "actor_id": "actor_1",
+        "type_of_actor": [
+          "employee"
+        ],
+        "enterprise_role": [
+          "finance_person"
+        ],
+        "state_of_relationship": [
+          "current"
+        ]
+      }
+    ],
+    "psychological_state": [
+      "unknown"
+    ],
+    "personality_characteristics": [
+      "unknown"
+    ],
+    "attitude_towards_work": [
+      "unknown"
+    ],
+    "motivation_to_attack": [
+      "financial_reward"
+    ],
+    "skill_set": "privileged_system_knowledge",
+    "opportunity": [
+      "privileged_access",
+      "trusted_position"
+    ],
+    "historical_behaviour": [
+      "unknown"
+    ],
+    "observed_physical_behaviour": [
+      "work_place_rule_violation"
+    ],
+    "observed_cyber_behaviour": [
+      "access_and_authentication",
+      "data_and_file_management"
+    ]
+  },
+  "attack_characteristics": {
+    "attack": "intentional",
+    "attack_objective": "fraud",
+    "attack_step": [
+      "access/access_acquisition",
+      "privilege/permission_abuse",
+      "execution/action",
+      "manipulation/modification"
+    ],
+    "attack_step_goal": [
+      "financial_loss"
+    ]
+  },
+  "organisation_characteristics": {
+    "asset": "organisational_assest",
+    "vulnerability": [
+      "unknown"
+    ]
+  }
+}

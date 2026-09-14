@@ -1,0 +1,115 @@
+{
+  "stage1_ingestion": {
+    "case_id": "CS-001",
+    "source": "US Department of Justice",
+    "reference": "https://www.justice.gov/archives/opa/pr/former-federal-employees-sentenced-conspiracy-steal-proprietary-us-government-software-and",
+    "case_summary": "Three former employees of the Department of Homeland Security and the United States Postal Service Office of Inspector General conspired to steal proprietary government software and sensitive law-enforcement databases containing PII of over 200,000 federal employees.",
+    "include_for_stage_2": true,
+    "screening_note": "Three insider actors involved. No direct evidence supporting psychological state, personality characteristics, work attitude, physical indicators, or historical behavioural indicators."
+  },
+
+  "catalyst": {
+    "precipitating_event": [
+      "new_opportunities"
+    ]
+  },
+
+  "actor_characteristics": {
+    "actors": [
+      {
+        "actor_id": "actor_1",
+        "type_of_actor": "former_employee",
+        "enterprise_role": "executive",
+        "state_of_relationship": "former"
+      },
+      {
+        "actor_id": "actor_2",
+        "type_of_actor": "employee",
+        "enterprise_role": "support_person",
+        "state_of_relationship": "current"
+      },
+      {
+        "actor_id": "actor_3",
+        "type_of_actor": "employee",
+        "enterprise_role": "support_person",
+        "state_of_relationship": "current"
+      }
+    ],
+
+    "psychological_state": [
+      "unknown"
+    ],
+
+    "personality_characteristics": [
+      "unknown"
+    ],
+
+    "attitude_towards_work": [
+      "unknown"
+    ],
+
+    "motivation_to_attack": [
+      "financial_reward"
+    ],
+
+    "skill_set": [
+      "technical_expertise",
+      "privileged_system_knowledge",
+      "data_exploitation_capability"
+    ],
+
+    "opportunity": [
+      "privileged_access",
+      "trusted_position",
+      "third_party_access"
+    ],
+
+    "historical_behaviour": [
+      "unknown"
+    ],
+
+    "observed_physical_behaviour": [
+      "unknown"
+    ],
+
+    "observed_cyber_behaviour": [
+      "data_and_file_management",
+      "communication_activities",
+      "privilege_and_security_behaviour"
+    ]
+  },
+
+  "attack_characteristics": {
+    "attack": [
+      "intentional"
+    ],
+
+    "attack_objective": [
+      "data_theft"
+    ],
+
+    "attack_step": [
+      "privilege/permission_Abuse",
+      "collection/acquisition",
+      "data_transfer/exfiltration",
+      "concealment/evasion"
+    ],
+
+    "attack_step_goal": [
+      "confidentiality_loss",
+      "privacy_loss",
+      "financial_loss"
+    ]
+  },
+
+  "organisation_characteristics": {
+    "asset": [
+      "information_asset",
+      "technology_asset"
+    ],
+
+    "vulnerability": [
+      "unknown"
+    ]
+  }
+}

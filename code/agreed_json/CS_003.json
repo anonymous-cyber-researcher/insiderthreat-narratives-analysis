@@ -1,0 +1,96 @@
+{
+  "stage1_ingestion": {
+    "case_id": "CS-003",
+    "source": "US Department of Justice",
+    "reference": "https://www.justice.gov/usao-ma/pr/california-man-sentenced-prison-defrauding-his-massachusetts-employer-over-16-year",
+    "case_summary": "A corporate manager embezzled over $1.2 million from their employer over a 16-year period by submitting fraudulent invoices through a fake staffing company they controlled.",
+    "include_for_stage_2": true,
+    "screening_note": "Trusted employee involved in long-term insider fraud. No direct evidence of psychological state, personality characteristics, work attitude, or prior behavioural indicators."
+  },
+
+  "catalyst": {
+    "precipitating_event": [
+      "unknown"
+    ]
+  },
+
+  "actor_characteristics": {
+    "actors": [
+      {
+        "actor_id": "actor_1",
+        "type_of_actor": "employee",
+        "enterprise_role": "manager",
+        "state_of_relationship": "current"
+      }
+    ],
+
+    "psychological_state": [
+      "unknown"
+    ],
+
+    "personality_characteristics": [
+      "unknown"
+    ],
+
+    "attitude_towards_work": [
+      "unknown"
+    ],
+
+    "motivation_to_attack": [
+      "financial_reward"
+    ],
+
+    "skill_set": [
+      "privileged_system_knowledge",
+      "deception/social_engineering_capability"
+    ],
+
+    "opportunity": [
+      "privileged_access",
+      "trusted_position"
+    ],
+
+    "historical_behaviour": [
+      "unknown"
+    ],
+
+    "observed_physical_behaviour": [
+      "workplace_rule_violation"
+    ],
+
+    "observed_cyber_behaviour": [
+      "data_and_file_management",
+      "privilege_and_security_behaviour"
+    ]
+  },
+
+  "attack_characteristics": {
+    "attack": [
+      "intentional"
+    ],
+
+    "attack_objective": [
+      "fraud"
+    ],
+
+    "attack_step": [
+      "preparation/planning",
+      "execution/action",
+      "manipulation/modification"
+    ],
+
+    "attack_step_goal": [
+      "financial_loss"
+    ]
+  },
+
+  "organisation_characteristics": {
+    "asset": [
+      "organisational_asset"
+    ],
+
+    "vulnerability": [
+      "insufficient_monitoring"
+    ]
+  }
+}

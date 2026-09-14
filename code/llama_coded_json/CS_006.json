@@ -1,0 +1,76 @@
+{
+  "stage1_ingestion": {
+    "case_id": "CS-006",
+    "source": "news_article",
+    "reference": "United States Attorney David L. Anderson and Federal Bureau of Investigation Special Agent in Charge Craig D. Fair",
+    "case_summary": "Sudhish Kasaba Ramesh was sentenced to 24 months in prison and ordered to pay a $15,000 fine for intentionally accessing a protected computer without authorization and recklessly causing damage.",
+    "include_for_stage_2": true,
+    "screening_note": "Motive coded as revenge only because the timing and case narrative link the act to termination."
+  },
+  "catalyst": {
+    "precipitating_event": [
+      "resignation",
+      "unknown"
+    ]
+  },
+  "actor_characteristics": {
+    "actors": [
+      {
+        "actor_id": "Ramesh",
+        "type_of_actor": "former_employee",
+        "enterprise_role": "engineer",
+        "state_of_relationship": "former"
+      }
+    ],
+    "psychological_state": [
+      "unknown"
+    ],
+    "personality_characteristics": [
+      "unknown"
+    ],
+    "attitude_towards_work": [
+      "unknown"
+    ],
+    "motivation_to_attack": [
+      "unknown"
+    ],
+    "skill_set": [
+      "technical_expertise"
+    ],
+    "opportunity": [
+      "privileged_access",
+      "unknown"
+    ],
+    "historical_behaviour": [
+      "unknown"
+    ],
+    "observed_physical_behaviour": [
+      "unknown"
+    ],
+    "observed_cyber_behaviour": [
+      "unknown"
+    ]
+  },
+  "attack_characteristics": {
+    "attack": [
+      "intentional"
+    ],
+    "attack_objective": [
+      "sabotage"
+    ],
+    "attack_step": [
+      "unknown"
+    ],
+    "attack_step_goal": [
+      "unknown"
+    ]
+  },
+  "organisation_characteristics": {
+    "asset": [
+      "information_asset"
+    ],
+    "vulnerability": [
+      "poor_management_practices"
+    ]
+  }
+}

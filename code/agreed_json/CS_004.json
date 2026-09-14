@@ -1,0 +1,109 @@
+{
+  "stage1_ingestion": {
+    "case_id": "CS-004",
+    "source": "US Department of Justice",
+    "reference": "https://www.justice.gov/usao-sdny/pr/former-employee-technology-company-pleads-guilty-stealing-confidential-data-and",
+    "case_summary": "A senior technology employee misused privileged administrative access to steal confidential company data and subsequently attempted to extort the company while concealing responsibility.",
+    "include_for_stage_2": false,
+    "screening_note": "Current employee at time of attack. Insider data theft, extortion, concealment, and reputational harm. No supported evidence for psychological state, personality characteristics, work attitude, or prior behavioural indicators."
+  },
+
+  "catalyst": {
+    "precipitating_event": [
+      "new_opportunities"
+    ]
+  },
+
+  "actor_characteristics": {
+    "actors": [
+      {
+        "actor_id": "actor_1",
+        "type_of_actor": "employee",
+        "enterprise_role": "programmer",
+        "state_of_relationship": "current"
+      }
+    ],
+
+    "psychological_state": [
+      "unknown"
+    ],
+
+    "personality_characteristics": [
+      "unknown"
+    ],
+
+    "attitude_towards_work": [
+      "unknown"
+    ],
+
+    "motivation_to_attack": [
+      "financial_reward"
+    ],
+
+    "skill_set": [
+      "technical_expertise",
+      "privileged_system_knowledge",
+      "data_exploitation_capability"
+    ],
+
+    "opportunity": [
+      "privileged_access",
+      "remote_access",
+      "trusted_position"
+    ],
+
+    "historical_behaviour": [
+      "unknown"
+    ],
+
+    "observed_physical_behaviour": [
+      "workplace_rule_violation"
+    ],
+
+    "observed_cyber_behaviour": [
+      "access_and_authentication",
+      "data_and_file_management",
+      "communication_activities",
+      "privilege_and_security_behaviour",
+      "system_and_network_behaviour"
+    ]
+  },
+
+  "attack_characteristics": {
+    "attack": [
+      "intentional"
+    ],
+
+    "attack_objective": [
+      "mixed"
+    ],
+
+    "attack_step": [
+      "access/access_acquisition",
+      "privilege/permission_Abuse",
+      "collection/acquisition",
+      "data_transfer/exfiltration",
+      "manipulation/modification",
+      "concealment/evasion"
+    ],
+
+    "attack_step_goal": [
+      "confidentiality_loss",
+      "integrity_loss",
+      "financial_loss",
+      "reputational_damage"
+    ]
+  },
+
+  "organisation_characteristics": {
+    "asset": [
+      "information_asset",
+      "technology_asset",
+      "intangible_asset"
+    ],
+
+    "vulnerability": [
+      "insufficient_monitoring"
+    ]
+  }
+}

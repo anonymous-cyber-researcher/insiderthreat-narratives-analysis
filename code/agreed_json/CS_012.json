@@ -1,0 +1,104 @@
+{
+  "stage1_ingestion": {
+    "case_id": "CS-012",
+    "source": "US Department of Justice",
+    "reference": "https://www.justice.gov/archives/opa/pr/court-imposes-maximum-fine-sinovel-wind-group-theft-trade-secrets",
+    "case_summary": "Sinovel Wind Group conspired with insiders, including a former AMSC employee, to steal proprietary wind turbine source code and trade secrets from AMSC and use the stolen intellectual property to manufacture and operate its own turbines without paying for the technology.",
+    "include_for_stage_2": true,
+    "screening_note": "Three actors actor_1 = Su Liying, deputy director of Sinovel's Research and Development Department; actor_2 = Zhao Haichun, technology manager for Sinovel; actor_3 = Dejan Karabasevic, former AMSC Windtec employee and head of the automation engineering department. Sinovel is the main actor but useful to add the others since the information is there. financial_reward seems toi be motive because Sinovel intended to use the technology without paying AMSC. Personal_gain is included because Karabasevic was convinced to leave AMSC Windtec and join Sinovel. I could not find psychological state, personality characteristic, attitude toward work, prior behaviour, physical behaviour, or organisational vulnerability is obviously stated. Information_asset is coded as the primary targeted asset."
+  },
+  "catalyst": {
+    "precipitating_event": "new_opportunities"
+  },
+  "actor_characteristics": {
+    "identified_actors": [
+      {
+        "actor_id": "actor_1",
+        "type_of_actor": [
+          "business_partner"
+        ],
+        "enterprise_role": [
+          "manager"
+        ],
+        "state_of_relationship": [
+          "contract"
+        ]
+      },
+      {
+        "actor_id": "actor_2",
+        "type_of_actor": [
+          "contractor"
+        ],
+        "enterprise_role": [
+          "manager"
+        ],
+        "state_of_relationship": [
+          "contract"
+        ]
+      },
+      {
+        "actor_id": "actor_3",
+        "type_of_actor": [
+          "former_employee"
+        ],
+        "enterprise_role": [
+          "manager"
+        ],
+        "state_of_relationship": [
+          "former"
+        ]
+      }
+    ],
+    "psychological_state": [
+      "unknown"
+    ],
+    "personality_characteristics": [
+      "unknown"
+    ],
+    "attitude_towards_work": [
+      "unknown"
+    ],
+    "motivation_to_attack": [
+      "financial_reward"
+    ],
+     "skill_set": [
+      "technical_expertise",
+      "privileged_system_knowledge",
+      "data_exploitation_capability"
+    ],
+    "opportunity": [
+      "privileged_access",
+      "remote_access"
+    ],
+    "historical_behaviour": [
+      "unknown"
+    ],
+    "observed_physical_behaviour": [
+      "unknown"
+    ],
+    "observed_cyber_behaviour": [
+      "data_and_file_management",
+      "privilege_and_security_behaviour",
+	  "communication_activities"
+    ]
+  },
+  "attack_characteristics": {
+    "attack": "intentional",
+    "attack_objective": "data_theft",
+    "attack_step": [
+      "target_identification",
+      "collection/acquisition",
+      "data_transfer/exfiltration",
+      "execution/action"
+    ],
+    "attack_step_goal": [
+      "financial_loss"
+    ]
+  },
+  "organisation_characteristics": {
+    "asset": "information_asset",
+    "vulnerability": [
+      "lack_of_security_policies"
+    ]
+  }
+}

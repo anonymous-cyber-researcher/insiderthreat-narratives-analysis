@@ -1,0 +1,97 @@
+﻿field,category,n_cases,human1_positive,human2_positive,percent_agreement,cohens_kappa
+actor_characteristics.attitude_towards_work,disengaged,21,0,2,90.48,0.0
+actor_characteristics.attitude_towards_work,hostile,21,1,0,95.24,0.0
+actor_characteristics.attitude_towards_work,resentful,21,9,8,57.14,0.1127
+actor_characteristics.attitude_towards_work,unknown,21,11,8,76.19,0.5291
+actor_characteristics.historical_behaviour,company_policy_violation,21,1,0,95.24,0.0
+actor_characteristics.historical_behaviour,harassment,21,1,0,95.24,0.0
+actor_characteristics.historical_behaviour,history_of_serious_mental_problems,21,0,1,95.24,0.0
+actor_characteristics.historical_behaviour,unknown,21,20,13,57.14,-0.0925
+actor_characteristics.motivation_to_attack,financial_reward,21,8,12,80.95,0.6316
+actor_characteristics.motivation_to_attack,other,21,2,0,90.48,0.0
+actor_characteristics.motivation_to_attack,personal_gain,21,3,1,90.48,0.4615
+actor_characteristics.motivation_to_attack,revenge,21,8,17,57.14,0.253
+actor_characteristics.motivation_to_attack,unknown,21,1,1,90.48,-0.05
+actor_characteristics.observed_cyber_behaviour,"access_and_authentication (Activities related to logging into systems and accessing organisational resources. (ex:Logins, failed logins, after-hours access, remote access, privilege use))",21,9,8,47.62,-0.0845
+actor_characteristics.observed_cyber_behaviour,"communication_activities (Use of communication channels within and outside the organisation.(Email, messaging, file sharing, external communications))",21,7,3,71.43,0.25
+actor_characteristics.observed_cyber_behaviour,"data_and_file_management (How users interact with organisational data and files.(ex:File creation, modification, deletion, copying, downloading, uploading, printing))",21,11,6,66.67,0.3467
+actor_characteristics.observed_cyber_behaviour,"privilege_and_security_behaviour (Actions involving security controls or privileged access.(Policy violations, privilege misuse, security control evasion, suspicious actions))",21,8,0,61.9,0.0
+actor_characteristics.observed_cyber_behaviour,"system_and_network_behaviour (Interaction with software, operating systems, organisational applications and network.(Running programs, executing scripts, installing software, administrative actions))",21,11,4,47.62,-0.0176
+actor_characteristics.observed_cyber_behaviour,unknown,21,0,7,66.67,0.0
+actor_characteristics.observed_physical_behaviour,conflicts_with_colleagues,21,1,0,95.24,0.0
+actor_characteristics.observed_physical_behaviour,increased_outbursts,21,1,0,95.24,0.0
+actor_characteristics.observed_physical_behaviour,unknown,21,20,14,61.9,-0.0909
+actor_characteristics.opportunity,insufficient_monitoring,21,4,7,66.67,0.16
+actor_characteristics.opportunity,no_access_revocation,21,10,0,52.38,0.0
+actor_characteristics.opportunity,privileged_access,21,18,16,71.43,0.087
+actor_characteristics.opportunity,remote_access,21,6,9,66.67,0.2899
+actor_characteristics.opportunity,shared_credentials,21,1,0,95.24,0.0
+actor_characteristics.opportunity,trusted_position,21,4,4,80.95,0.3824
+actor_characteristics.opportunity,unknown,21,0,6,71.43,0.0
+actor_characteristics.personality_characteristics,greed,21,2,1,85.71,-0.0678
+actor_characteristics.personality_characteristics,low_agreeableness,21,0,1,95.24,0.0
+actor_characteristics.personality_characteristics,selfishness,21,2,1,85.71,-0.0678
+actor_characteristics.personality_characteristics,unknown,21,17,13,71.43,0.3298
+actor_characteristics.psychological_state,disgruntlement,21,5,5,80.95,0.475
+actor_characteristics.psychological_state,financial_stress,21,3,6,66.67,0.0392
+actor_characteristics.psychological_state,grievances,21,3,0,85.71,0.0
+actor_characteristics.psychological_state,job_dissatisfaction,21,0,1,95.24,0.0
+actor_characteristics.psychological_state,misjudgement,21,0,1,95.24,0.0
+actor_characteristics.psychological_state,rationalisation,21,1,0,95.24,0.0
+actor_characteristics.psychological_state,unknown,21,9,5,80.95,0.5882
+actor_characteristics.skill_set,data_exploitation_capability,21,1,1,90.48,-0.05
+actor_characteristics.skill_set,deception/social_engineering_capability,21,1,1,90.48,-0.05
+actor_characteristics.skill_set,privileged_system_knowledge,21,21,16,76.19,0.0
+actor_characteristics.skill_set,technical_expertise,21,13,19,71.43,0.2921
+actor_characteristics.skill_set,unknown,21,0,5,76.19,0.0
+attack_characteristics.attack,intentional,21,21,20,95.24,0.0
+attack_characteristics.attack,unintentional,21,0,3,85.71,0.0
+attack_characteristics.attack,unknown,21,0,3,85.71,0.0
+attack_characteristics.attack_objective,data_theft,21,6,14,61.9,0.3333
+attack_characteristics.attack_objective,espionage,21,5,0,76.19,0.0
+attack_characteristics.attack_objective,fraud,21,4,4,90.48,0.6912
+attack_characteristics.attack_objective,sabotage,21,10,17,66.67,0.3524
+attack_characteristics.attack_step,AS01:preparation/planning (Activities undertaken to prepare for the intended insider incident).,21,11,0,47.62,0.0
+attack_characteristics.attack_step,"AS02:target_identification (Identifying valuable information, systems, accounts, people, or organisational assets).",21,4,0,80.95,0.0
+attack_characteristics.attack_step,"AS03:information_gathering / Discovery (Obtaining information about systems, data, processes, vulnerabilities, or security arrangements).",21,11,0,47.62,0.0
+attack_characteristics.attack_step,AS04:access/access_acquisition (Obtaining or using the access necessary to perform the intended activity).,21,16,0,23.81,0.0
+attack_characteristics.attack_step,AS05:privilege/permission_Abuse (Misusing legitimate privileges or obtaining additional permissions to reach restricted resources.,21,4,0,80.95,0.0
+attack_characteristics.attack_step,"AS06:collection/acquisition (Gathering the information, credentials, files, or other assets relevant to the attack objective).",21,11,0,47.62,0.0
+attack_characteristics.attack_step,"AS07:execution/action (Performing the substantive malicious or unauthorised activity against the organisation, system, or data).",21,9,0,57.14,0.0
+attack_characteristics.attack_step,AS08:data_transfer/exfiltration (Moving information or assets to an unauthorised destination or recipient.),21,10,0,52.38,0.0
+attack_characteristics.attack_step,"AS09:manipulation/modification (Altering, corrupting, deleting, or otherwise changing organisational data or systems).",21,6,0,71.43,0.0
+attack_characteristics.attack_step,"AS10:sabotage/disruption (Deliberately interfering with systems, services, or operations.)",21,6,0,71.43,0.0
+attack_characteristics.attack_step,AS11:concealment/evasion (Actions intended to reduce the likelihood of detection or attribution.),21,8,1,57.14,-0.0925
+attack_characteristics.attack_step,AS12:persistence/continued_access (Maintaining the ability to access or affect systems after the initial activity.),21,0,1,95.24,0.0
+attack_characteristics.attack_step,unknown,21,0,20,4.76,0.0
+attack_characteristics.attack_step_goal,G01:confidentiality_loss	(Unauthorised disclosur,21,13,0,38.1,0.0
+attack_characteristics.attack_step_goal,"G01:confidentiality_loss	(Unauthorised disclosure, exposure, copying, transfer, or access to information that should remain restricted to authorised individuals or systems)",21,0,1,95.24,0.0
+attack_characteristics.attack_step_goal,"G02:integrity_loss(Unauthorised alteration, manipulation, corruption, deletion, falsification, or destruction of information, systems, software, or processes that compromises their accuracy, completeness, or trustworthiness)",21,6,1,76.19,0.2222
+attack_characteristics.attack_step_goal,"G03:availability_loss (Preventing or reducing authorised users' ability to access information, systems, services, networks, or resources when required)",21,6,0,71.43,0.0
+attack_characteristics.attack_step_goal,"G04:financial_loss (Direct or indirect financial harm resulting from the insider activity, including theft, fraud, unauthorised transactions, financial manipulation, or monetary losses)",21,10,0,52.38,0.0
+attack_characteristics.attack_step_goal,G05:reputational_damage	(Harm ,21,6,0,71.43,0.0
+attack_characteristics.attack_step_goal,"G06:privacy_loss	(Unauthorised exposure, acquis",21,2,0,90.48,0.0
+attack_characteristics.attack_step_goal,"G07:operational_disruption (Interference with normal organisational activities, business processes, services, or workflows that reduces the organisation's ability to conduct its operations effectively)",21,6,0,71.43,0.0
+attack_characteristics.attack_step_goal,unknown,21,0,17,19.05,0.0
+catalyst.precipitating_event,coercion,21,1,0,95.24,0.0
+catalyst.precipitating_event,demotion,21,3,2,85.71,0.3226
+catalyst.precipitating_event,disputes_with_employers,21,1,4,85.71,0.3505
+catalyst.precipitating_event,employee_dismissal,21,4,2,80.95,0.2364
+catalyst.precipitating_event,family_problems,21,0,8,61.9,0.0
+catalyst.precipitating_event,negative_company_acts,21,0,1,95.24,0.0
+catalyst.precipitating_event,new_opportunities,21,2,0,90.48,0.0
+catalyst.precipitating_event,other,21,4,0,80.95,0.0
+catalyst.precipitating_event,perceived_injustices,21,1,1,90.48,-0.05
+catalyst.precipitating_event,resignation,21,7,10,47.62,-0.0645
+catalyst.precipitating_event,unknown,21,2,10,61.9,0.2075
+organisation_characteristics.asset,information_asset,21,13,12,66.67,0.3099
+organisation_characteristics.asset,intangible_asset,21,0,1,95.24,0.0
+organisation_characteristics.asset,organisational_asset,21,2,10,61.9,0.2075
+organisation_characteristics.asset,technology_asset,21,9,2,57.14,0.0308
+organisation_characteristics.asset,unknown,21,0,2,90.48,0.0
+organisation_characteristics.vulnerability,inconsistent_security_policies,21,0,12,42.86,0.0
+organisation_characteristics.vulnerability,insufficient_monitoring,21,14,0,33.33,0.0
+organisation_characteristics.vulnerability,lack_of_oversight,21,9,0,57.14,0.0
+organisation_characteristics.vulnerability,poor_management_practices,21,16,17,76.19,0.2953
+organisation_characteristics.vulnerability,poor_security_practices,21,1,1,100.0,1.0
+organisation_characteristics.vulnerability,unknown,21,0,1,95.24,0.0

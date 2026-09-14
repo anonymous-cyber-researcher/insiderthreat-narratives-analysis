@@ -1,0 +1,83 @@
+{
+  "stage1_ingestion": {
+    "case_id": "CS-010",
+    "source": "US Department of Justice",
+    "reference": "https://www.justice.gov/usao-sdny/pr/former-cybersecurity-consultant-arrested-15-million-extortion-scheme-against-it",
+    "case_summary": "An individual with privileged access to a company’s sensitive and proprietary information allegedly misused that access after his employment ended by copying confidential data without authorisation. He then attempted to leverage the stolen information to pressure the organisation into making a substantial financial payment, leading to criminal extortion charges.",
+    "include_for_stage_2": true,
+    "screening_note": "trusted cybersecurity consultant/contractor, access to sensitive and proprietary company information, alleged unauthorised copying and upload of that information after the engagement ended, and an extortion demand based on threatened disclosure. The actor is coded as contractor rather than employee because he was assigned by a staffing company to work on an engagement with the victim company. Catalyst is coded as employee_dismissal which is perhaps not quite right for end of contract?. Attack objective was extortion, which is evidenced but not available as a schema value; the data theft component is represented in attack steps and goals. Psychological state, personality characteristics, attitude toward work, historical behaviour, and physical behaviour are coded as unknown because the source does not provide enough evidence. Organisation vulnerability is coded as othe."
+  },
+  "catalyst": {
+    "precipitating_event": "Employee_dismissal"
+  },
+  "actor_characteristics": {
+    "identified_actors": [
+      {
+        "actor_id": "actor_1",
+        "type_of_actor": [
+          "contractor"
+        ],
+        "enterprise_role": [
+          "security_person"
+        ],
+        "state_of_relationship": [
+          "former"
+        ]
+      }
+    ],
+    "psychological_state": [
+      "unknown"
+    ],
+    "personality_characteristics": [
+      "unknown"
+    ],
+    "attitude_towards_work": [
+      "unknown"
+    ],
+    "motivation_to_attack": [
+      "financial_reward"
+    ],
+    "skill_set": [
+		"privileged_system_knowledge",
+		"data_exploitation_capability"
+	],
+    "opportunity": [
+      "privileged_access",
+      "trusted_position",
+      "third_party_access"
+    ],
+    "historical_behaviour": [
+      "unknown"
+    ],
+    "observed_physical_behaviour": [
+      "unknown"
+    ],
+    "observed_cyber_behaviour": [
+      "access_and_authentication",
+      "data_and_file_management",
+      "communication_activities",
+      "privilege_and_security_behaviour"
+    ]
+  },
+  "attack_characteristics": {
+    "attack": "intentional",
+    "attack_objective": "other",
+    "attack_step": [
+      "collection/acquisition",
+      "data_transfer/exfiltration",
+      "execution/action"
+    ],
+    "attack_step_goal": [
+      "confidentiality_loss",
+      "confidentiality_loss",
+      "financial_loss",
+      "other"
+    ]
+  },
+  "organisation_characteristics": {
+    "asset": "information_asset",
+    "vulnerability": [
+      "poor_security_practices"
+    ]
+  }
+}

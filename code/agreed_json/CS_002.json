@@ -1,0 +1,102 @@
+{
+  "stage1_ingestion": {
+    "case_id": "CS-002",
+    "source": "US Department of Justice",
+    "reference": "https://www.justice.gov/usao-cdca/pr/us-navy-sailor-sentenced-more-2-years-prison-transmitting-sensitive-us-military",
+    "case_summary": "A U.S. Navy insider accepted bribes from a foreign intelligence officer and transmitted sensitive military information obtained through authorised access.",
+    "include_for_stage_2": true,
+    "screening_note": "Intentional insider espionage case motivated by financial reward. No direct evidence of psychological state, personality traits, work attitude, historical behaviour, or organisational vulnerabilities."
+  },
+
+  "catalyst": {
+    "precipitating_event": [
+      "coercion",
+      "new_opportunities"
+    ]
+  },
+
+  "actor_characteristics": {
+    "actors": [
+      {
+        "actor_id": "actor_1",
+        "type_of_actor": "other",
+        "enterprise_role": "military_person",
+        "state_of_relationship": "current"
+      }
+    ],
+
+    "psychological_state": [
+      "unknown"
+    ],
+
+    "personality_characteristics": [
+      "unknown"
+    ],
+
+    "attitude_towards_work": [
+      "unknown"
+    ],
+
+    "motivation_to_attack": [
+      "financial_reward"
+    ],
+
+    "skill_set": [
+      "privileged_system_knowledge",
+      "technical_expertise"
+    ],
+
+    "opportunity": [
+      "privileged_access",
+      "physical_access",
+      "trusted_position"
+    ],
+
+    "historical_behaviour": [
+      "unknown"
+    ],
+
+    "observed_physical_behaviour": [
+      "workplace_rule_violation"
+    ],
+
+    "observed_cyber_behaviour": [
+      "communication_activities",
+      "data_and_file_management",
+      "privilege_and_security_behaviour"
+    ]
+  },
+
+  "attack_characteristics": {
+    "attack": [
+      "intentional"
+    ],
+
+    "attack_objective": [
+      "espionage"
+    ],
+
+    "attack_step": [
+      "target_identification",
+      "privilege/permission_Abuse",
+      "collection/acquisition",
+      "data_transfer/exfiltration",
+      "concealment/evasion"
+    ],
+
+    "attack_step_goal": [
+      "confidentiality_loss"
+    ]
+  },
+
+  "organisation_characteristics": {
+    "asset": [
+      "information_asset",
+      "technology_asset"
+    ],
+
+    "vulnerability": [
+      "unknown"
+    ]
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "stage1_ingestion": {
+    "case_id": "CS-004",
+    "source": "court_document",
+    "reference": "United States Attorney's Office, Southern District of New York",
+    "case_summary": "Nickolas Sharp, a senior developer at a New York-based technology company, misused his access to steal confidential data, extort the company for $2 million, and publish misleading news articles, causing significant financial loss.",
+    "include_for_stage_2": true,
+    "screening_note": "The case involves intentional data theft, extortion, and reputational damage. Proceed to Stage 2 for detailed analysis."
+  },
+  "catalyst": {
+    "precipitating_event": [
+      "other"
+    ]
+  },
+  "actor_characteristics": {
+    "actors": [
+      {
+        "actor_id": "actor_1",
+        "type_of_actor": "employee",
+        "enterprise_role": "programmer",
+        "state_of_relationship": "former"
+      }
+    ],
+    "psychological_state": [
+      "unknown"
+    ],
+    "personality_characteristics": [
+      "unknown"
+    ],
+    "attitude_towards_work": [
+      "unknown"
+    ],
+    "motivation_to_attack": [
+      "financial_reward",
+      "revenge"
+    ],
+    "skill_set": [
+      "technical_expertise",
+      "privileged_system_knowledge"
+    ],
+    "opportunity": [
+      "privileged_access",
+      "remote_access",
+      "insufficient_monitoring"
+    ],
+    "historical_behaviour": [
+      "unknown"
+    ],
+    "observed_physical_behaviour": [
+      "unknown"
+    ],
+    "observed_cyber_behaviour": [
+      "access_and_authentication",
+      "data_and_file_management",
+      "communication_activities"
+    ]
+  },
+  "attack_characteristics": {
+    "attack": [
+      "intentional"
+    ],
+    "attack_objective": [
+      "data_theft",
+      "fraud"
+    ],
+    "attack_step": [
+      "preparation/planning",
+      "access/access_acquisition",
+      "privilege/permission_Abuse",
+      "data_transfer/exfiltration",
+      "manipulation/modification",
+      "concealment/evasion"
+    ],
+    "attack_step_goal": [
+      "confidentiality_loss",
+      "financial_loss",
+      "reputational_damage"
+    ]
+  },
+  "organisation_characteristics": {
+    "asset": [
+      "information_asset"
+    ],
+    "vulnerability": [
+      "poor_management_practices",
+      "insufficient_monitoring"
+    ]
+  }
+}

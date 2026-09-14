@@ -1,0 +1,78 @@
+{
+  "stage1_ingestion": {
+    "case_id": "CS-010",
+    "source": "press_release",
+    "reference": "United States Attorney's Office, Southern District of New York",
+    "case_summary": "Vincent Cannady was arrested for attempting to extort $1.5 million from an IT services provider by threatening to disclose confidential information after his engagement was terminated.",
+    "include_for_stage_2": true,
+    "screening_note": "The case involves extortion following termination, with explicit threats to disclose sensitive information."
+  },
+  "catalyst": {
+    "precipitating_event": [
+      "resignation"
+    ]
+  },
+  "actor_characteristics": {
+    "actors": [
+      {
+        "actor_id": "actor_1",
+        "type_of_actor": "contractor",
+        "enterprise_role": "security_person",
+        "state_of_relationship": "former"
+      }
+    ],
+    "psychological_state": [
+      "grievances"
+    ],
+    "personality_characteristics": [
+      "unknown"
+    ],
+    "attitude_towards_work": [
+      "resentful"
+    ],
+    "motivation_to_attack": [
+      "financial_reward"
+    ],
+    "skill_set": [
+      "privileged_system_knowledge"
+    ],
+    "opportunity": [
+      "privileged_access",
+      "no_access_revocation"
+    ],
+    "historical_behaviour": [
+      "unknown"
+    ],
+    "observed_physical_behaviour": [
+      "unknown"
+    ],
+    "observed_cyber_behaviour": [
+      "data_and_file_management"
+    ]
+  },
+  "attack_characteristics": {
+    "attack": [
+      "intentional"
+    ],
+    "attack_objective": [
+      "fraud"
+    ],
+    "attack_step": [
+      "data_transfer/exfiltration",
+      "concealment/evasion"
+    ],
+    "attack_step_goal": [
+      "financial_loss",
+      "reputational_damage"
+    ]
+  },
+  "organisation_characteristics": {
+    "asset": [
+      "information_asset"
+    ],
+    "vulnerability": [
+      "poor_management_practices",
+      "lack_of_oversight"
+    ]
+  }
+}

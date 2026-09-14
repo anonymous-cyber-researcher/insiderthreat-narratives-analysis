@@ -1,0 +1,105 @@
+{
+  "stage1_ingestion": {
+    "case_id": "CS-005",
+    "source": "US Department of Justice",
+    "reference": "https://www.justice.gov/usao-hi/pr/honolulu-man-pleads-guilty-sabotaging-former-employer-s-computer-network",
+    "case_summary": "A former IT professional sabotaged a former employer's network by using retained administrative credentials to alter domain-management settings and disrupt web and email services.",
+    "include_for_stage_2": true,
+    "screening_note": "Former trusted IT employee. Deliberate sabotage conducted after departure using retained credentials. Motivation included personal and financial gain."
+  },
+
+  "catalyst": {
+    "precipitating_event": [
+      "resignation"
+    ]
+  },
+
+  "actor_characteristics": {
+    "actors": [
+      {
+        "actor_id": "actor_1",
+        "type_of_actor": "former_employee",
+        "enterprise_role": "support_person",
+        "state_of_relationship": "former"
+      }
+    ],
+
+    "psychological_state": [
+      "unknown"
+    ],
+
+    "personality_characteristics": [
+      "unknown"
+    ],
+
+    "attitude_towards_work": [
+      "unknown"
+    ],
+
+    "motivation_to_attack": [
+      "financial_reward",
+      "personal_gain"
+    ],
+
+    "skill_set": [
+      "technical_expertise",
+      "privileged_system_knowledge"
+    ],
+
+    "opportunity": [
+      "privileged_access",
+      "remote_access",
+      "no_access_revocation",
+      "trusted_position"
+    ],
+
+    "historical_behaviour": [
+      "unknown"
+    ],
+
+    "observed_physical_behaviour": [
+      "unknown"
+    ],
+
+    "observed_cyber_behaviour": [
+      "access_and_authentication",
+      "system_and_network_behaviour",
+      "privilege_and_security_behaviour"
+    ]
+  },
+
+  "attack_characteristics": {
+    "attack": [
+      "intentional"
+    ],
+
+    "attack_objective": [
+      "sabotage"
+    ],
+
+    "attack_step": [
+      "access/access_acquisition",
+      "privilege/permission_Abuse",
+      "manipulation/modification",
+      "sabotage/disruption",
+      "persistence/continued_access"
+    ],
+
+    "attack_step_goal": [
+      "availability_loss",
+      "operational_disruption"
+    ]
+  },
+
+  "organisation_characteristics": {
+    "asset": [
+      "technology_asset"
+    ],
+
+    "vulnerability": [
+      "poor_management_practices",
+      "no_access_revocation",
+      "insufficient_monitoring"
+    ]
+  }
+}
