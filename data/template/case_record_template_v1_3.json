@@ -1,0 +1,125 @@
+{
+  "case_id": "",
+  "stage1_ingestion": {
+    "source": {
+      "type": "other",
+      "citation": "",
+      "url_or_reference": "",
+      "date_published": "",
+      "jurisdiction": "",
+      "source_reliability": "unknown"
+    },
+    "triage": {
+      "include_for_stage2": true,
+      "exclusion_reason": "",
+      "confidence_case_is_intentional": "unknown",
+      "case_summary": ""
+    },
+    "taxonomy_screening": {
+      "possible_individual_factors": [],
+      "possible_organisational_factors": [],
+      "possible_situational_factors": [],
+      "screening_notes": ""
+    },
+    "impact_and_resolution": {
+      "impact_magnitude": "unknown",
+      "estimated_loss_usd": null,
+      "employment_outcome": "not_stated",
+      "legal_outcome": "unknown",
+      "employment_outcome_detail": "",
+      "legal_disposition_detail": "",
+      "sentencing_summary": ""
+    },
+    "ingestion_notes": ""
+  },
+  "stage2_case_coding": {
+    "coding_metadata": {
+      "annotators": [],
+      "annotation_date": "",
+      "review_status": "draft",
+      "inter_annotator_agreement": {
+        "measured": true,
+        "kappa_value": null
+      }
+    },
+    "five_w_one_h_coding": {
+      "who": {
+        "coded_insider_profiles": []
+      },
+      "what": {
+        "canonical_incident_type": "unknown",
+        "canonical_action": "",
+        "action_description": "",
+        "target_asset_or_process": "",
+        "harm_type": "unknown"
+      },
+      "when": {
+        "temporal_context": "unknown",
+        "sequence_type": "unknown",
+        "episode_horizon": "unknown",
+        "important_pre_incident_conditions": [],
+        "important_trigger_events": []
+      },
+      "where": {
+        "organisational_context": "",
+        "system_context": "",
+        "environmental_context": ""
+      },
+      "why": {
+        "primary_motivation": [],
+        "motivation_narrative": "",
+        "motivation_confidence": "unknown",
+        "rationalisation_present": "unclear"
+      },
+      "how": {
+        "attack_or_abuse_path": "",
+        "mechanism_type": "unknown",
+        "concealment_methods": [],
+        "behavioural_progression_summary": ""
+      }
+    },
+    "taxonomy_coding": {
+      "individual_human_factors": [],
+      "organisational_factors": [],
+      "situational_and_task_factors": []
+    },
+    "case_structure": {
+      "preconditions": {
+        "human": [],
+        "organisational": [],
+        "situational_task": []
+      },
+      "stage_sequence": [],
+      "case_progression_abstraction": {
+        "pre_incident_state_summary": "",
+        "key_behaviour_or_decision": "",
+        "organisation_response_if_any": "",
+        "outcome_summary": "",
+        "explanation_of_case_logic": ""
+      }
+    },
+    "outcome_coding": {
+      "outcome_type": "unknown",
+      "severity": "unknown",
+      "scope_description": "",
+      "detected": "unclear",
+      "detection_method": "",
+      "resolution_summary": ""
+    },
+    "case_based_reasoning_mapping": {
+      "case_family": "",
+      "progression_pattern": "unknown",
+      "retrieval_features": [],
+      "similarity_dimensions": [],
+      "salient_risk_indicators": [],
+      "possible_intervention_points": [],
+      "candidate_controls_or_responses": [],
+      "adaptation_notes": "",
+      "precedent_value": "unknown",
+      "implementation_constraints": "",
+      "decision_support_notes": ""
+    },
+    "assumptions_and_limitations": "",
+    "coding_notes": ""
+  }
+}

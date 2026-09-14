@@ -1,0 +1,73 @@
+{
+  "stage1_ingestion": {
+    "case_id": "CS-006",
+    "source": "US Department of Justice",
+    "reference": "https://www.justice.gov/usao-ndca/pr/san-jose-man-sentenced-two-years-imprisonment-damaging-cisco-s-network",
+    "case_summary": "Copilot said:
+
+A former employee unlawfully accessed his previous employer’s systems and carried out actions that disrupted critical business operations and services. The incident resulted in significant operational and financial impacts on the organization, leading to criminal charges and a prison sentence.",
+    "include_for_stage_2": false,
+    "screening_note": ""
+  },
+  "catalyst": {
+    "precipitating_event": "unknown"
+  },
+  "actor_characteristics": {
+    "identified_actors": [
+      {
+        "actor_id": "actor_1",
+        "type_of_actor": ["unknown"],
+        "enterprise_role": ["unknown"],
+        "state_of_relationship": ["unknown"]
+      },
+      {
+        "actor_id": "actor_2",
+        "type_of_actor": ["unknown"],
+        "enterprise_role": ["unknown"],
+        "state_of_relationship": ["unknown"]
+      }
+    ],
+
+    "psychological_state": [
+      "unknown"
+    ],
+    "personality_characteristics": [
+      "unknown"
+    ],
+    "attitude_towards_work": [
+      "unknown"
+    ],
+    "motivation_to_attack": [
+      "unknown"
+    ],
+    "skill_set": "unknown",
+    "opportunity": [
+      "unknown"
+    ],
+    "historical_behaviour": [
+      "unknown"
+    ],
+    "observed_physical_behaviour": [
+      "unknown"
+    ],
+    "observed_cyber_behaviour": [
+      "unknown"
+    ]
+  },
+  "attack_characteristics": {
+    "attack": "unknown",
+    "attack_objective": "unknown",
+    "attack_step": [
+      "unknown"
+    ],
+    "attack_step_goal": [
+      "unknown"
+    ]
+  },
+  "organisation_characteristics": {
+    "asset": "unknown",
+    "vulnerability": [
+      "unknown"
+    ]
+  }
+}

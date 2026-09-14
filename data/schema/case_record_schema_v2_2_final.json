@@ -1,0 +1,467 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/case_record_schema_v2_2.json",
+  "title": "Insider Threat Case Record Schema",
+  "description": "Corrected v2.1 validation schema for intentional insider threat case-study coding. Fixes v2 JSON syntax issues, aligns the template with required fields, corrects attack_step and attack_step_goal as arrays, and removes uniqueItems from actor-characteristic arrays so ordered multi-actor coding can repeat values where necessary.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "stage1_ingestion",
+    "catalyst",
+    "actor_characteristics",
+    "attack_characteristics",
+    "organisation_characteristics"
+  ],
+  "properties": {
+    "stage1_ingestion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "case_id",
+        "source",
+        "reference",
+        "case_summary",
+        "include_for_stage_2",
+        "screening_note"
+      ],
+      "properties": {
+        "case_id": {
+          "type": "string",
+          "pattern": "^CS-[0-9]{3,}$",
+          "description": "Unique case identifier. Use the format CS-001, CS-002, etc. The template placeholder CS-000 should be replaced during coding."
+        },
+        "source": {
+          "type": "string",
+          "description": "Source of the case data, such as report, court document, media source, academic case, or internal dataset."
+        },
+        "reference": {
+          "type": "string",
+          "description": "Unique case reference, citation, URL, document name, or dataset reference."
+        },
+        "case_summary": {
+          "type": "string",
+          "description": "Short factual summary of the case."
+        },
+        "include_for_stage_2": {
+          "type": "boolean",
+          "description": "Whether the case proceeds to Stage 2 analysis."
+        },
+        "screening_note": {
+          "type": "string",
+          "description": "Analyst screening notes, including reasons for inclusion, exclusion, and uncertainty."
+        }
+      }
+    },
+    "catalyst": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "precipitating_event"
+      ],
+      "properties": {
+        "precipitating_event": {
+          "type": "array",
+          "description": "Triggering event or catalyst associated with the insider behaviour. Use 'unknown' if no trigger is stated or defensibly inferable.",
+		  "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "employee_dismissal",
+			  "demotion",
+			  "resignation",
+			  "disputes_with_employers",
+			  "perceived_injustices",
+			  "negative_company_acts",
+			  "family_problems",
+			  "coercion",
+			  "new_opportunities",
+			  "other",
+			  "unknown"
+            ]
+          },
+          "minItems": 1
+        }
+      }
+	  
+          
+    },
+    "actor_characteristics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "actors",
+		"psychological_state",
+		"personality_characteristics",
+		"attitude_towards_work",
+		"motivation_to_attack",
+		"skill_set",
+		"opportunity",
+		"historical_behaviour",
+		"observed_physical_behaviour",
+		"observed_cyber_behaviour"
+      ],
+      "properties": {
+        "actors": {
+			"description": "Actor-specific information. Add one object for each actor involved in the incident.",
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"type": "object",
+				"additionalProperties": false,
+				"required": [
+					"actor_id",
+					"type_of_actor",
+					"enterprise_role",
+					"state_of_relationship"
+				],
+				"properties": {
+					"actor_id": {
+						"description": "Identifier for the actor (e.g., actor_1, actor_2).",
+						"type": "string"
+					},
+					"type_of_actor": {
+						"description": "Insider actor type.",
+						"type": "string",
+						"enum": [
+							"employee",
+							"former_employee",
+							"contractor",
+							"business_partner",
+							"other",
+							"unknown"
+						]
+					},
+					"enterprise_role": {
+						"description": "Insider actor's organisational role.",
+						"type": "string",
+						"enum": [
+						  "scientist",
+						  "engineer",
+						  "programmer",
+						  "salesperson",
+						  "manager",
+						  "security_person",
+						  "finance_person",
+						  "executive",
+						  "support_person",
+						  "military_person",
+						  "other",
+						  "unknown"
+						]
+					},
+				    "state_of_relationship": {
+						"description": "Current relationship between the enterprise and the actor.",
+						"type": "string",
+						"enum": [
+						  "current",
+						  "former",
+						  "serving_notice",
+						  "temporary",
+						  "contract",
+						  "other",
+						  "unknown"
+						]
+					  }
+                }
+            }
+        },
+        "psychological_state": {
+          "description": "Actor's psychological or emotional state, coded only when supported by evidence.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "financial_stress",
+              "grievances",
+              "misjudgement",
+              "rationalisation",
+              "disgruntlement",
+              "aggression",
+              "job_dissatisfaction",
+              "other",
+              "unknown"
+            ]
+          },
+          "minItems": 1
+        },
+        "personality_characteristics": {
+          "description": "Actor personality characteristics, coded conservatively and only when directly stated or strongly supported.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "greed",
+              "selfishness",
+              "personal_inflexibilities",
+              "narcissism",
+              "psychopathy",
+              "low_agreeableness",
+              "risk_tolerance",
+              "honesty_humility",
+              "other",
+              "unknown"
+            ]
+          },
+          "minItems": 1
+        },
+        "attitude_towards_work": {
+          "description": "Actor's feelings, perceptions, or behavioural orientation toward work.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "dissatisfied",
+              "disengaged",
+              "resentful",
+              "hostile",
+              "other",
+              "unknown"
+            ]
+          },
+          "minItems": 1
+        },
+        "motivation_to_attack": {
+          "description": "Reason or motive for the attack, coded only when supported by evidence.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "financial_reward",
+              "personal_gain",
+              "revenge",
+              "other",
+              "unknown"
+            ]
+          },
+          "minItems": 1
+        },
+        "skill_set": {
+          "description": "Description of the actor's relevant skills or capabilities that enable the attack. Use 'unknown' if not stated.",
+		  "type": "array",
+		  "items": {
+			  "type": "string",
+			  "enum": [
+				"technical_expertise",
+				"privileged_system_knowledge",
+				"data_exploitation_capability",
+				"deception/social_engineering_capability",
+				"other",
+				"unknown"
+			  ]
+		  },
+		  "minItems": 1
+        },
+        "opportunity": {
+          "description": "Actor's opportunity to initiate or conduct the attack.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "privileged_access",
+              "physical_access",
+              "remote_access",
+              "shared_credentials",
+			  "no_access_revocation",
+              "insufficient_monitoring",
+              "trusted_position",
+              "third_party_access",
+              "other",
+              "unknown"
+            ]
+          },
+          "minItems": 1
+        },
+        "historical_behaviour": {
+          "description": "Relevant historical behaviour before the incident.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "addictive_practices",
+              "harassment",
+              "company_policy_violation",
+              "criminal_history",
+              "history_of_serious_mental_problems",
+              "carelessness",
+              "absent_mindedness",
+              "other",
+              "unknown"
+            ]
+          },
+          "minItems": 1
+        },
+        "observed_physical_behaviour": {
+          "description": "Observed physical-world behaviour relevant to the case.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "poor_work_performance",
+              "workplace_rule_violation",
+              "conflicts_with_colleagues",
+              "increased_outbursts",
+              "substance_abuse",
+              "other",
+              "unknown"
+            ]
+          },
+          "minItems": 1
+        },
+        "observed_cyber_behaviour": {
+          "description": "List of observed cyber activities.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "access_and_authentication (Activities related to logging into systems and accessing organisational resources. (ex:Logins, failed logins, after-hours access, remote access, privilege use))",
+              "data_and_file_management (How users interact with organisational data and files.(ex:File creation, modification, deletion, copying, downloading, uploading, printing))",
+              "communication_activities (Use of communication channels within and outside the organisation.(Email, messaging, file sharing, external communications))",
+			  "system_and_network_behaviour (Interaction with software, operating systems, organisational applications and network.(Running programs, executing scripts, installing software, administrative actions))", 
+			  "privilege_and_security_behaviour (Actions involving security controls or privileged access.(Policy violations, privilege misuse, security control evasion, suspicious actions))",
+              "other",
+              "unknown"
+            ]
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "attack_characteristics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "attack",
+        "attack_objective",
+        "attack_step",
+        "attack_step_goal"
+      ],
+      "properties": {
+        "attack": {
+          "description": "Whether the harmful activity was intentional, unintentional, other, or unknown.",
+          "type": "array",
+		  "items": {
+			"type": "string",
+			"enum": [
+			  "intentional",
+              "unintentional",
+              "other",
+              "unknown"
+			]
+		  },
+		  "minItems": 1
+        },
+        "attack_objective": {
+          "description": "Primary objective or outcome associated with the attack.",
+          "type": "array",
+		  "items": {
+			"type": "string",
+			"enum": [
+				"data_theft",
+				"sabotage",
+				"fraud",
+				"espionage",
+				"mixed",
+				"other",
+				"unknown"
+            ]
+		  },
+		  "minItems": 1
+          
+        },
+		"attack_step": {
+		  "type": "array",
+		  "description": "Specific activities undertaken to conduct the attack. Use technique names/IDs which are mentioned bellow",
+		  "items": {
+			"type": "string",
+			"enum": [
+			  "AS01:preparation/planning (Activities undertaken to prepare for the intended insider incident).",
+			  "AS02:target_identification (Identifying valuable information, systems, accounts, people, or organisational assets).",
+			  "AS03:information_gathering / Discovery (Obtaining information about systems, data, processes, vulnerabilities, or security arrangements).",
+			  "AS04:access/access_acquisition (Obtaining or using the access necessary to perform the intended activity).",
+			  "AS05:privilege/permission_Abuse (Misusing legitimate privileges or obtaining additional permissions to reach restricted resources.",
+			  "AS06:collection/acquisition (Gathering the information, credentials, files, or other assets relevant to the attack objective).",
+			  "AS07:execution/action (Performing the substantive malicious or unauthorised activity against the organisation, system, or data).",
+			  "AS08:data_transfer/exfiltration (Moving information or assets to an unauthorised destination or recipient.)",
+			  "AS09:manipulation/modification (Altering, corrupting, deleting, or otherwise changing organisational data or systems).",
+			  "AS10:sabotage/disruption (Deliberately interfering with systems, services, or operations.)",
+			  "AS11:concealment/evasion (Actions intended to reduce the likelihood of detection or attribution.)",
+			  "AS12:persistence/continued_access (Maintaining the ability to access or affect systems after the initial activity.)",
+			  "other",
+			  "unknown"
+			]
+		  },
+		  "minItems": 1
+		},
+		
+		"attack_step_goal": {
+		  "type": "array",
+		  "description": "Specific outcome/goal after the the attack steps take place",
+		  "items": {
+			"type": "string",
+			"enum": [
+			  "G01:confidentiality_loss	(Unauthorised disclosure, exposure, copying, transfer, or access to information that should remain restricted to authorised individuals or systems)",
+			  "G02:integrity_loss(Unauthorised alteration, manipulation, corruption, deletion, falsification, or destruction of information, systems, software, or processes that compromises their accuracy, completeness, or trustworthiness)",
+			  "G03:availability_loss (Preventing or reducing authorised users' ability to access information, systems, services, networks, or resources when required)",
+			  "G04:financial_loss (Direct or indirect financial harm resulting from the insider activity, including theft, fraud, unauthorised transactions, financial manipulation, or monetary losses)",
+			  "G05:reputational_damage	(Harm to the organisation's reputation, credibility, trust, public image, or relationships with customers, partners, regulators, or other stakeholders as a consequence of the insider activity)",
+			  "G06:privacy_loss	(Unauthorised exposure, acquisition, disclosure, or misuse of personal, private, or personally identifiable information belonging to employees, customers, clients, or other individuals)",
+			  "G07:operational_disruption (Interference with normal organisational activities, business processes, services, or workflows that reduces the organisation's ability to conduct its operations effectively)",
+			  "other",
+			  "unknown"
+			]
+		  },
+		  "minItems": 1
+		}
+      }
+    },
+    "organisation_characteristics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "asset",
+        "vulnerability"
+      ],
+      "properties": {
+        "asset": {
+          "description": "Targeted organisational asset, data, system, process, or service.",
+          "type": "array",
+		  "items": {
+            "type": "string",
+            "enum": [
+              "information_asset",
+			  "technology_asset",
+			  "organisational_asset",
+			  "intangible_asset",
+			  "other",
+			  "unknown"
+            ]
+          },
+          "minItems": 1,
+        },
+        "vulnerability": {
+          "description": "Organisational or control vulnerabilities that enabled or worsened the incident.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "lack_of_security_policies",
+              "inconsistent_security_policies",
+			  "poor_security_practices",
+              "organisational_culture",
+              "lack_of_support",
+              "poor_communication",
+              "poor_management_practices",
+              "leadership_issues",
+              "insufficient_monitoring",
+			  "lack of oversight",
+              "other",
+              "unknown"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}

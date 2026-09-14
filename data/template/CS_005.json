@@ -1,0 +1,65 @@
+{
+  "stage1_ingestion": {
+    "case_id": "CS-005",
+    "source": "US Department of Justice",
+    "reference": "https://www.justice.gov/usao-hi/pr/honolulu-man-pleads-guilty-sabotaging-former-employer-s-computer-network",
+    "case_summary": "A former IT professional deliberately sabotaged their ex-employer’s computer network after leaving the company by using previously granted administrative credentials to access and alter domain and network settings. These actions disrupted web and email services for several days by redirecting traffic and locking the company out of its systems.",
+    "include_for_stage_2": false,
+    "screening_note": ""
+  },
+  "catalyst": {
+    "precipitating_event": "unknown"
+  },
+  "actor_characteristics": {
+    "type_of_actor": [
+      "unknown"
+    ],
+    "enterprise_role": [
+      "unknown"
+    ],
+    "state_of_relationship": [
+      "unknown"
+    ],
+    "psychological_state": [
+      "unknown"
+    ],
+    "personality_characteristics": [
+      "unknown"
+    ],
+    "attitude_towards_work": [
+      "unknown"
+    ],
+    "motivation_to_attack": [
+      "unknown"
+    ],
+    "skill_set": "unknown",
+    "opportunity": [
+      "unknown"
+    ],
+    "historical_behaviour": [
+      "unknown"
+    ],
+    "observed_physical_behaviour": [
+      "unknown"
+    ],
+    "observed_cyber_behaviour": [
+      "unknown"
+    ]
+  },
+  "attack_characteristics": {
+    "attack": "unknown",
+    "attack_objective": "unknown",
+    "attack_step": [
+      "unknown"
+    ],
+    "attack_step_goal": [
+      "unknown"
+    ]
+  },
+  "organisation_characteristics": {
+    "asset": "unknown",
+    "vulnerability": [
+      "unknown"
+    ]
+  }
+}

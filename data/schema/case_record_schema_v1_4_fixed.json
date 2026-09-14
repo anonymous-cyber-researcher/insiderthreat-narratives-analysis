@@ -1,0 +1,367 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/case_record_schema_v2_1.json",
+  "title": "Insider Threat Case Record Schema",
+  "description": "Corrected v2.1 validation schema for intentional insider threat case-study coding. Fixes v2 JSON syntax issues, aligns the template with required fields, corrects attack_step and attack_step_goal as arrays, and removes uniqueItems from actor-characteristic arrays so ordered multi-actor coding can repeat values where necessary.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "stage1_ingestion",
+    "catalyst",
+    "actor_characteristics",
+    "attack_characteristics",
+    "organisation_characteristics"
+  ],
+  "properties": {
+    "stage1_ingestion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "case_id",
+        "source",
+        "reference",
+        "case_summary",
+        "include_for_stage_2",
+        "screening_note"
+      ],
+      "properties": {
+        "case_id": {
+          "type": "string",
+          "pattern": "^CS-[0-9]{3,}$",
+          "description": "Unique case identifier. Use the format CS-001, CS-002, etc. The template placeholder CS-000 should be replaced during coding."
+        },
+        "source": {
+          "type": "string",
+          "description": "Source of the case data, such as report, court document, media source, academic case, or internal dataset."
+        },
+        "reference": {
+          "type": "string",
+          "description": "Unique case reference, citation, URL, document name, or dataset reference."
+        },
+        "case_summary": {
+          "type": "string",
+          "description": "Short factual summary of the case."
+        },
+        "include_for_stage_2": {
+          "type": "boolean",
+          "description": "Whether the case proceeds to Stage 2 analysis."
+        },
+        "screening_note": {
+          "type": "string",
+          "description": "Analyst screening notes, including reasons for inclusion, exclusion, and uncertainty."
+        }
+      }
+    },
+    "catalyst": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "precipitating_event"
+      ],
+      "properties": {
+        "precipitating_event": {
+          "type": "string",
+          "description": "Triggering event or catalyst associated with the insider behaviour. Use 'unknown' if no trigger is stated or defensibly inferable."
+        }
+      }
+    },
+    "actor_characteristics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type_of_actor",
+        "enterprise_role",
+        "state_of_relationship",
+        "psychological_state",
+        "personality_characteristics",
+        "attitude_towards_work",
+        "motivation_to_attack",
+        "skill_set",
+        "opportunity",
+        "historical_behaviour",
+        "observed_physical_behaviour",
+        "observed_cyber_behaviour"
+      ],
+      "properties": {
+        "type_of_actor": {
+          "description": "Insider actor type. Repeated values are allowed to preserve ordering in multi-actor cases.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "employee",
+              "former_employee",
+              "contractor",
+              "business_partner",
+              "other",
+              "unknown"
+            ]
+          },
+          "minItems": 1
+        },
+        "enterprise_role": {
+          "description": "Insider actor's organisational role. Use the same ordering as type_of_actor where multiple actors are coded.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "scientist",
+              "engineer",
+              "programmer",
+              "salesperson",
+              "manager",
+              "security_person",
+              "finance_person",
+              "executive",
+              "support_person",
+              "other",
+              "unknown"
+            ]
+          },
+          "minItems": 1
+        },
+        "state_of_relationship": {
+          "description": "Current relationship between the enterprise and the actor. Use the same ordering as type_of_actor where multiple actors are coded.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "current",
+              "former",
+              "serving_notice",
+              "temporary",
+              "contract",
+              "other",
+              "unknown"
+            ]
+          },
+          "minItems": 1
+        },
+        "psychological_state": {
+          "description": "Actor's psychological or emotional state, coded only when supported by evidence.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "financial_stress",
+              "grievances",
+              "misjudgement",
+              "rationalisation",
+              "disgruntlement",
+              "aggression",
+              "job_dissatisfaction",
+              "other",
+              "unknown"
+            ]
+          },
+          "minItems": 1
+        },
+        "personality_characteristics": {
+          "description": "Actor personality characteristics, coded conservatively and only when directly stated or strongly supported.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "greed",
+              "selfishness",
+              "personal_inflexibilities",
+              "narcissism",
+              "psychopathy",
+              "low_agreeableness",
+              "risk_tolerance",
+              "honesty_humility",
+              "other",
+              "unknown"
+            ]
+          },
+          "minItems": 1
+        },
+        "attitude_towards_work": {
+          "description": "Actor's feelings, perceptions, or behavioural orientation toward work.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "dissatisfied",
+              "disengaged",
+              "resentful",
+              "hostile",
+              "other",
+              "unknown"
+            ]
+          },
+          "minItems": 1
+        },
+        "motivation_to_attack": {
+          "description": "Reason or motive for the attack, coded only when supported by evidence.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "financial_reward",
+              "personal_gain",
+              "revenge",
+              "other",
+              "unknown"
+            ]
+          },
+          "minItems": 1
+        },
+        "skill_set": {
+          "type": "string",
+          "description": "Free-text description of the actor's relevant skills or capabilities. Use 'unknown' if not stated."
+        },
+        "opportunity": {
+          "description": "Actor's opportunity to initiate or conduct the attack.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "privileged_access",
+              "physical_access",
+              "remote_access",
+              "shared_credentials",
+              "insufficient_monitoring",
+              "poor_segmentation",
+              "trusted_position",
+              "third_party_access",
+              "other",
+              "unknown"
+            ]
+          },
+          "minItems": 1
+        },
+        "historical_behaviour": {
+          "description": "Relevant historical behaviour before the incident.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "addictive_practices",
+              "harassment",
+              "company_policy_violation",
+              "criminal_history",
+              "history_of_serious_mental_problems",
+              "carelessness",
+              "absent_mindedness",
+              "other",
+              "unknown"
+            ]
+          },
+          "minItems": 1
+        },
+        "observed_physical_behaviour": {
+          "description": "Observed physical-world behaviour relevant to the case.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "poor_work_performance",
+              "workplace_rule_violation",
+              "conflicts_with_colleagues",
+              "increased_outbursts",
+              "substance_abuse",
+              "other",
+              "unknown"
+            ]
+          },
+          "minItems": 1
+        },
+        "observed_cyber_behaviour": {
+          "description": "Free-text list of observed cyber activities. Use concise, factual phrases such as 'copied proprietary files', 'deleted logs', or 'unknown'.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "attack_characteristics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "attack",
+        "attack_objective",
+        "attack_step",
+        "attack_step_goal"
+      ],
+      "properties": {
+        "attack": {
+          "description": "Whether the harmful activity was intentional, unintentional, other, or unknown.",
+          "type": "string",
+          "enum": [
+            "intentional",
+            "unintentional",
+            "other",
+            "unknown"
+          ]
+        },
+        "attack_objective": {
+          "description": "Primary objective or outcome associated with the attack.",
+          "type": "string",
+          "enum": [
+            "data_theft",
+            "sabotage",
+            "fraud",
+            "espionage",
+            "mixed",
+            "other",
+            "unknown"
+          ]
+        },
+        "attack_step": {
+          "description": "Specific activities undertaken to conduct the attack. Use MITRE ATT&CK technique names/IDs where possible; otherwise use concise free text.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "attack_step_goal": {
+          "description": "Goal associated with each attack step. Use the same order as attack_step.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "organisation_characteristics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "asset",
+        "vulnerability"
+      ],
+      "properties": {
+        "asset": {
+          "description": "Targeted organisational asset, data, system, process, or service.",
+          "type": "string"
+        },
+        "vulnerability": {
+          "description": "Organisational or control vulnerabilities that enabled or worsened the incident.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "lack_of_security_policies",
+              "inconsistent_security_policies",
+              "organisational_culture",
+              "lack_of_support",
+              "poor_communication",
+              "poor_management_practices",
+              "leadership_issues",
+              "insufficient_monitoring",
+              "other",
+              "unknown"
+            ]
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}

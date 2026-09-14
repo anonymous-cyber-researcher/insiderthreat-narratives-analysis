@@ -1,0 +1,65 @@
+{
+  "stage1_ingestion": {
+    "case_id": "CS-003",
+    "source": "US Department of Justice",
+    "reference": "https://www.justice.gov/usao-ma/pr/california-man-sentenced-prison-defrauding-his-massachusetts-employer-over-16-year",
+    "case_summary": "A corporate manager embezzled over $1.2 million from their employer over a 16-year period by submitting fraudulent invoices through a fake staffing company they controlled. They falsified internal approvals to authorize payments and diverted the funds into a personal bank account.",
+    "include_for_stage_2": true,
+    "screening_note": ""
+  },
+  "catalyst": {
+    "precipitating_event": "unknown"
+  },
+  "actor_characteristics": {
+    "type_of_actor": [
+      "unknown"
+    ],
+    "enterprise_role": [
+      "unknown"
+    ],
+    "state_of_relationship": [
+      "unknown"
+    ],
+    "psychological_state": [
+      "unknown"
+    ],
+    "personality_characteristics": [
+      "unknown"
+    ],
+    "attitude_towards_work": [
+      "unknown"
+    ],
+    "motivation_to_attack": [
+      "unknown"
+    ],
+    "skill_set": "unknown",
+    "opportunity": [
+      "unknown"
+    ],
+    "historical_behaviour": [
+      "unknown"
+    ],
+    "observed_physical_behaviour": [
+      "unknown"
+    ],
+    "observed_cyber_behaviour": [
+      "unknown"
+    ]
+  },
+  "attack_characteristics": {
+    "attack": "unknown",
+    "attack_objective": "unknown",
+    "attack_step": [
+      "unknown"
+    ],
+    "attack_step_goal": [
+      "unknown"
+    ]
+  },
+  "organisation_characteristics": {
+    "asset": "unknown",
+    "vulnerability": [
+      "unknown"
+    ]
+  }
+}

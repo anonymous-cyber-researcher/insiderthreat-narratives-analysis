@@ -1,0 +1,954 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/case_record_schema_v1_3.json",
+  "title": "Case Record Schema v1.3",
+  "description": "Validation schema for combined Stage 1 ingestion and Stage 2 case-based reasoning and stage-based modelling records for intentional insider threat case studies. Version 1.3 removes RL-specific mapping, replaces scenario_structure with case_structure, and replaces state_action_outcome_abstraction with case_progression_abstraction.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "case_id",
+    "stage1_ingestion",
+    "stage2_case_coding"
+  ],
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "pattern": "^CS-[0-9]{3,}$"
+    },
+    "stage1_ingestion": {
+      "$ref": "#/$defs/stage1_ingestion"
+    },
+    "stage2_case_coding": {
+      "$ref": "#/$defs/stage2_case_coding"
+    }
+  },
+  "$defs": {
+    "confidence_enum": {
+      "type": "string",
+      "enum": [
+        "high",
+        "medium",
+        "low",
+        "unknown"
+      ]
+    },
+    "severity_enum": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "unknown"
+      ]
+    },
+    "timeline_type_enum": {
+      "type": "string",
+      "enum": [
+        "acute",
+        "chronic",
+        "mixed",
+        "unknown"
+      ]
+    },
+    "source_reliability_enum": {
+      "type": "string",
+      "enum": [
+        "high",
+        "medium",
+        "low",
+        "unknown"
+      ]
+    },
+    "review_status_enum": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "reviewed",
+        "final"
+      ]
+    },
+    "employment_outcome_enum": {
+      "type": "string",
+      "enum": [
+        "terminated",
+        "resigned",
+        "suspended",
+        "unknown",
+        "retired",
+        "not_stated"
+      ]
+    },
+    "legal_outcome_enum": {
+      "type": "string",
+      "enum": [
+        "charged",
+        "convicted",
+        "under_investigation",
+        "civil_penalty",
+        "none",
+        "unknown",
+        "pleaded_guilty",
+        "sentenced",
+        "acquitted",
+        "dismissed",
+        "not_stated"
+      ]
+    },
+    "canonical_incident_type_enum": {
+      "type": "string",
+      "enum": [
+        "fraud",
+        "sabotage",
+        "espionage",
+        "theft",
+        "mixed",
+        "other",
+        "unknown"
+      ]
+    },
+    "harm_type_enum": {
+      "type": "string",
+      "enum": [
+        "financial_loss",
+        "service_disruption",
+        "data_exfiltration",
+        "data_destruction",
+        "integrity_compromise",
+        "mixed",
+        "unknown"
+      ]
+    },
+    "sequence_type_enum": {
+      "type": "string",
+      "enum": [
+        "single_stage",
+        "staged",
+        "escalating",
+        "repeated",
+        "unknown"
+      ]
+    },
+    "episode_horizon_enum": {
+      "type": "string",
+      "enum": [
+        "short",
+        "medium",
+        "long",
+        "unknown"
+      ]
+    },
+    "mechanism_type_enum": {
+      "type": "string",
+      "enum": [
+        "fraud_scheme",
+        "sabotage_code",
+        "credential_abuse",
+        "data_copying",
+        "access_manipulation",
+        "mixed",
+        "other",
+        "unknown"
+      ]
+    },
+    "motive_enum": {
+      "type": "string",
+      "enum": [
+        "financial_gain",
+        "revenge",
+        "grievance",
+        "personal_gain",
+        "ideology",
+        "coercion",
+        "status",
+        "unknown"
+      ]
+    },
+    "yes_no_unclear_enum": {
+      "type": "string",
+      "enum": [
+        "yes",
+        "no",
+        "unclear"
+      ]
+    },
+    "evidence_type_enum": {
+      "type": "string",
+      "enum": [
+        "direct",
+        "defensible_inference",
+        "unclear"
+      ]
+    },
+    "stage_label_enum": {
+      "type": "string",
+      "enum": [
+        "setup",
+        "preparation",
+        "initial_action",
+        "repetition",
+        "escalation",
+        "concealment",
+        "detection",
+        "outcome",
+        "other"
+      ]
+    },
+    "progression_pattern_enum": {
+      "type": "string",
+      "enum": [
+        "single_step",
+        "staged_linear",
+        "staged_iterative",
+        "escalating",
+        "branching",
+        "mixed",
+        "unknown"
+      ]
+    },
+    "precedent_value_enum": {
+      "type": "string",
+      "enum": [
+        "high",
+        "medium",
+        "low",
+        "unknown"
+      ]
+    },
+    "taxonomy_factor_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "factor",
+        "sub_category",
+        "evidence",
+        "confidence"
+      ],
+      "properties": {
+        "factor": {
+          "type": "string",
+          "description": "Canonical taxonomy factor ID from the intentional insider threat taxonomy where available."
+        },
+        "sub_category": {
+          "type": "string",
+          "description": "Taxonomy sub-category containing the factor."
+        },
+        "evidence": {
+          "type": "string",
+          "description": "Short evidence snippet or conservative paraphrase supporting the coding decision."
+        },
+        "confidence": {
+          "$ref": "#/$defs/confidence_enum",
+          "description": "Confidence in the coding assignment rather than confidence in the source itself."
+        },
+        "factor_label": {
+          "type": "string",
+          "description": "Optional human-readable label for reporting."
+        },
+        "evidence_type": {
+          "$ref": "#/$defs/evidence_type_enum",
+          "description": "Whether the factor is directly stated or conservatively inferred from the case material."
+        },
+        "notes": {
+          "type": "string",
+          "description": "Optional coder note explaining ambiguity or rationale."
+        }
+      }
+    },
+    "case_stage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stage_id",
+        "stage_order",
+        "stage_label",
+        "stage_description",
+        "observable_indicators",
+        "possible_intervention_point",
+        "confidence"
+      ],
+      "properties": {
+        "stage_id": {
+          "type": "string",
+          "description": "Unique local identifier for this stage within the case."
+        },
+        "stage_order": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Ordinal position of the stage within the case progression."
+        },
+        "stage_label": {
+          "$ref": "#/$defs/stage_label_enum"
+        },
+        "stage_name": {
+          "type": "string",
+          "description": "Optional short label for the stage, such as 'privilege misuse begins'."
+        },
+        "stage_description": {
+          "type": "string",
+          "description": "Plain-language description of what happens at this stage."
+        },
+        "observable_indicators": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Observable cues, actions, or conditions associated with this stage."
+        },
+        "supporting_evidence": {
+          "type": "string",
+          "description": "Optional evidence snippet or conservative paraphrase supporting the presence of this stage."
+        },
+        "transition_trigger": {
+          "type": "string",
+          "description": "Optional event or condition that appears to move the case into the next stage."
+        },
+        "possible_intervention_point": {
+          "type": "boolean",
+          "description": "Whether this stage appears to be a plausible decision-support or intervention point."
+        },
+        "intervention_rationale": {
+          "type": "string",
+          "description": "Optional brief explanation of why the stage matters for decision support."
+        },
+        "confidence": {
+          "$ref": "#/$defs/confidence_enum",
+          "description": "Confidence that this stage is present and correctly characterised."
+        },
+        "notes": {
+          "type": "string",
+          "description": "Optional coder note on uncertainty, alternative interpretations, or missing data."
+        }
+      }
+    },
+    "stage1_ingestion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source",
+        "triage",
+        "taxonomy_screening",
+        "impact_and_resolution",
+        "ingestion_notes"
+      ],
+      "properties": {
+        "source": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type",
+            "citation",
+            "url_or_reference",
+            "date_published",
+            "jurisdiction",
+            "source_reliability"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "doj_press_release",
+                "regulator_report",
+                "court_document",
+                "vendor_report",
+                "media",
+                "academic_case",
+                "other"
+              ]
+            },
+            "citation": {
+              "type": "string"
+            },
+            "url_or_reference": {
+              "type": "string"
+            },
+            "date_published": {
+              "type": "string"
+            },
+            "jurisdiction": {
+              "type": "string"
+            },
+            "source_reliability": {
+              "$ref": "#/$defs/source_reliability_enum"
+            }
+          }
+        },
+        "triage": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "include_for_stage2",
+            "exclusion_reason",
+            "confidence_case_is_intentional",
+            "case_summary"
+          ],
+          "properties": {
+            "include_for_stage2": {
+              "type": "boolean"
+            },
+            "exclusion_reason": {
+              "type": "string"
+            },
+            "confidence_case_is_intentional": {
+              "$ref": "#/$defs/confidence_enum"
+            },
+            "case_summary": {
+              "type": "string"
+            }
+          }
+        },
+        "taxonomy_screening": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "possible_individual_factors",
+            "possible_organisational_factors",
+            "possible_situational_factors",
+            "screening_notes"
+          ],
+          "properties": {
+            "possible_individual_factors": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "possible_organisational_factors": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "possible_situational_factors": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "screening_notes": {
+              "type": "string"
+            }
+          }
+        },
+        "impact_and_resolution": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "impact_magnitude",
+            "estimated_loss_usd",
+            "employment_outcome",
+            "legal_outcome"
+          ],
+          "properties": {
+            "impact_magnitude": {
+              "$ref": "#/$defs/severity_enum"
+            },
+            "estimated_loss_usd": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "employment_outcome": {
+              "$ref": "#/$defs/employment_outcome_enum",
+              "description": "Coarse employment outcome. Use not_stated when the source is silent."
+            },
+            "legal_outcome": {
+              "$ref": "#/$defs/legal_outcome_enum",
+              "description": "Coarse legal status. Use legal_disposition_detail and sentencing_summary for nuance."
+            },
+            "employment_outcome_detail": {
+              "type": "string",
+              "description": "Free-text detail where employment disposition is nuanced or not fully stated."
+            },
+            "legal_disposition_detail": {
+              "type": "string",
+              "description": "Free-text detail capturing plea, conviction, sentencing posture, or mixed co-offender statuses."
+            },
+            "sentencing_summary": {
+              "type": "string",
+              "description": "Optional summary of prison, probation, fines, or related sanctions."
+            }
+          }
+        },
+        "ingestion_notes": {
+          "type": "string"
+        }
+      }
+    },
+    "stage2_case_coding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "coding_metadata",
+        "five_w_one_h_coding",
+        "taxonomy_coding",
+        "case_structure",
+        "outcome_coding",
+        "case_based_reasoning_mapping",
+        "assumptions_and_limitations",
+        "coding_notes"
+      ],
+      "properties": {
+        "coding_metadata": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "annotators",
+            "annotation_date",
+            "review_status",
+            "inter_annotator_agreement"
+          ],
+          "properties": {
+            "annotators": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "annotation_date": {
+              "type": "string"
+            },
+            "review_status": {
+              "$ref": "#/$defs/review_status_enum"
+            },
+            "inter_annotator_agreement": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "measured",
+                "kappa_value"
+              ],
+              "properties": {
+                "measured": {
+                  "type": "boolean"
+                },
+                "kappa_value": {
+                  "type": [
+                    "number",
+                    "null"
+                  ],
+                  "minimum": -1,
+                  "maximum": 1
+                }
+              }
+            }
+          }
+        },
+        "five_w_one_h_coding": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "who",
+            "what",
+            "when",
+            "where",
+            "why",
+            "how"
+          ],
+          "properties": {
+            "who": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "coded_insider_profiles"
+              ],
+              "properties": {
+                "coded_insider_profiles": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "insider_id",
+                      "role_context",
+                      "access_context",
+                      "relevant_capabilities",
+                      "co_offenders_present"
+                    ],
+                    "properties": {
+                      "insider_id": {
+                        "type": "string"
+                      },
+                      "role_context": {
+                        "type": "string"
+                      },
+                      "access_context": {
+                        "type": "string"
+                      },
+                      "relevant_capabilities": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "co_offenders_present": {
+                        "type": "boolean"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "what": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "canonical_incident_type",
+                "canonical_action",
+                "action_description",
+                "target_asset_or_process",
+                "harm_type"
+              ],
+              "properties": {
+                "canonical_incident_type": {
+                  "$ref": "#/$defs/canonical_incident_type_enum"
+                },
+                "canonical_action": {
+                  "type": "string"
+                },
+                "action_description": {
+                  "type": "string"
+                },
+                "target_asset_or_process": {
+                  "type": "string"
+                },
+                "harm_type": {
+                  "$ref": "#/$defs/harm_type_enum"
+                }
+              }
+            },
+            "when": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "temporal_context",
+                "sequence_type",
+                "episode_horizon",
+                "important_pre_incident_conditions",
+                "important_trigger_events"
+              ],
+              "properties": {
+                "temporal_context": {
+                  "$ref": "#/$defs/timeline_type_enum"
+                },
+                "sequence_type": {
+                  "$ref": "#/$defs/sequence_type_enum"
+                },
+                "episode_horizon": {
+                  "$ref": "#/$defs/episode_horizon_enum"
+                },
+                "important_pre_incident_conditions": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "important_trigger_events": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "where": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "organisational_context",
+                "system_context",
+                "environmental_context"
+              ],
+              "properties": {
+                "organisational_context": {
+                  "type": "string"
+                },
+                "system_context": {
+                  "type": "string"
+                },
+                "environmental_context": {
+                  "type": "string"
+                }
+              }
+            },
+            "why": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "primary_motivation",
+                "motivation_narrative",
+                "motivation_confidence",
+                "rationalisation_present"
+              ],
+              "properties": {
+                "primary_motivation": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/motive_enum"
+                  }
+                },
+                "motivation_narrative": {
+                  "type": "string"
+                },
+                "motivation_confidence": {
+                  "$ref": "#/$defs/confidence_enum"
+                },
+                "rationalisation_present": {
+                  "$ref": "#/$defs/yes_no_unclear_enum"
+                }
+              }
+            },
+            "how": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "attack_or_abuse_path",
+                "mechanism_type",
+                "concealment_methods",
+                "behavioural_progression_summary"
+              ],
+              "properties": {
+                "attack_or_abuse_path": {
+                  "type": "string"
+                },
+                "mechanism_type": {
+                  "$ref": "#/$defs/mechanism_type_enum"
+                },
+                "concealment_methods": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "behavioural_progression_summary": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "taxonomy_coding": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "individual_human_factors",
+            "organisational_factors",
+            "situational_and_task_factors"
+          ],
+          "properties": {
+            "individual_human_factors": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/taxonomy_factor_evidence"
+              }
+            },
+            "organisational_factors": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/taxonomy_factor_evidence"
+              }
+            },
+            "situational_and_task_factors": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/taxonomy_factor_evidence"
+              }
+            }
+          }
+        },
+        "case_structure": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "preconditions",
+            "stage_sequence",
+            "case_progression_abstraction"
+          ],
+          "properties": {
+            "preconditions": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "human",
+                "organisational",
+                "situational_task"
+              ],
+              "properties": {
+                "human": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "organisational": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "situational_task": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "stage_sequence": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/case_stage"
+              },
+              "description": "Ordered sequence of coded stages used in stage-based modelling and case comparison."
+            },
+            "case_progression_abstraction": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "pre_incident_state_summary",
+                "key_behaviour_or_decision",
+                "organisation_response_if_any",
+                "outcome_summary",
+                "explanation_of_case_logic"
+              ],
+              "properties": {
+                "pre_incident_state_summary": {
+                  "type": "string"
+                },
+                "key_behaviour_or_decision": {
+                  "type": "string"
+                },
+                "organisation_response_if_any": {
+                  "type": "string"
+                },
+                "outcome_summary": {
+                  "type": "string"
+                },
+                "explanation_of_case_logic": {
+                  "type": "string",
+                  "description": "Brief conservative explanation of how preconditions, stages, behaviour, and outcomes link together."
+                }
+              }
+            }
+          }
+        },
+        "outcome_coding": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "outcome_type",
+            "severity",
+            "scope_description",
+            "detected",
+            "detection_method",
+            "resolution_summary"
+          ],
+          "properties": {
+            "outcome_type": {
+              "$ref": "#/$defs/harm_type_enum"
+            },
+            "severity": {
+              "$ref": "#/$defs/severity_enum"
+            },
+            "scope_description": {
+              "type": "string"
+            },
+            "detected": {
+              "$ref": "#/$defs/yes_no_unclear_enum"
+            },
+            "detection_method": {
+              "type": "string"
+            },
+            "resolution_summary": {
+              "type": "string"
+            }
+          }
+        },
+        "case_based_reasoning_mapping": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "case_family",
+            "progression_pattern",
+            "retrieval_features",
+            "similarity_dimensions",
+            "salient_risk_indicators",
+            "possible_intervention_points",
+            "candidate_controls_or_responses",
+            "adaptation_notes",
+            "precedent_value",
+            "implementation_constraints",
+            "decision_support_notes"
+          ],
+          "properties": {
+            "case_family": {
+              "type": "string",
+              "description": "Broad family of analogous cases used for retrieval and grouping."
+            },
+            "progression_pattern": {
+              "$ref": "#/$defs/progression_pattern_enum",
+              "description": "Overall pattern by which the case unfolds."
+            },
+            "retrieval_features": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Key features likely to be useful for retrieving similar cases."
+            },
+            "similarity_dimensions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Dimensions along which this case should be compared with other cases, such as motive, access, or concealment."
+            },
+            "salient_risk_indicators": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Signals or cues that make the case important for risk-oriented comparison."
+            },
+            "possible_intervention_points": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Stages or moments in the case where decision support or control measures might plausibly have mattered."
+            },
+            "candidate_controls_or_responses": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Potential organisational controls, mitigations, or response options suggested by the case."
+            },
+            "adaptation_notes": {
+              "type": "string",
+              "description": "Notes on how the case may need to be adapted before being used as a precedent in a different context."
+            },
+            "precedent_value": {
+              "$ref": "#/$defs/precedent_value_enum",
+              "description": "Overall usefulness of the case as a precedent for future retrieval or decision support."
+            },
+            "implementation_constraints": {
+              "type": "string",
+              "description": "Practical, legal, ethical, or contextual constraints that limit transfer of lessons from the case."
+            },
+            "decision_support_notes": {
+              "type": "string",
+              "description": "Free-text notes capturing why this case matters for case-based reasoning or structured decision support."
+            }
+          }
+        },
+        "assumptions_and_limitations": {
+          "type": "string"
+        },
+        "coding_notes": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

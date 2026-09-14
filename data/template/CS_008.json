@@ -1,0 +1,71 @@
+{
+  "stage1_ingestion": {
+    "case_id": "CS-008",
+    "source": "US Department of Justice",
+    "reference": "https://www.justice.gov/usao-sdny/pr/former-cia-officer-joshua-adam-schulte-sentenced-40-years-prison-espionage-and-child",
+    "case_summary": "An employee with privileged access to highly sensitive government systems abused that access to obtain classified information, conceal unauthorised activities, and disclose protected data outside authorised channels.",
+    "include_for_stage_2": true,
+    "screening_note": ""
+  },
+  "catalyst": {
+    "precipitating_event": "unknown"
+  },
+  "actor_characteristics": {
+    "identified_actors": [
+      {
+        "actor_id": "actor_1",
+        "type_of_actor": ["unknown"],
+        "enterprise_role": ["unknown"],
+        "state_of_relationship": ["unknown"]
+      },
+      {
+        "actor_id": "actor_2",
+        "type_of_actor": ["unknown"],
+        "enterprise_role": ["unknown"],
+        "state_of_relationship": ["unknown"]
+      }
+    ],
+
+    "psychological_state": [
+      "unknown"
+    ],
+    "personality_characteristics": [
+      "unknown"
+    ],
+    "attitude_towards_work": [
+      "unknown"
+    ],
+    "motivation_to_attack": [
+      "unknown"
+    ],
+    "skill_set": "unknown",
+    "opportunity": [
+      "unknown"
+    ],
+    "historical_behaviour": [
+      "unknown"
+    ],
+    "observed_physical_behaviour": [
+      "unknown"
+    ],
+    "observed_cyber_behaviour": [
+      "unknown"
+    ]
+  },
+  "attack_characteristics": {
+    "attack": "unknown",
+    "attack_objective": "unknown",
+    "attack_step": [
+      "unknown"
+    ],
+    "attack_step_goal": [
+      "unknown"
+    ]
+  },
+  "organisation_characteristics": {
+    "asset": "unknown",
+    "vulnerability": [
+      "unknown"
+    ]
+  }
+}
